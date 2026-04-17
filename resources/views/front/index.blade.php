@@ -395,22 +395,22 @@
         </div>
       </div>
       <div class="flex items-center gap-4">
-        <a href="">
+        <a href="https://www.youtube.com/">
           <div class="w-6 h-6 flex shrink-0 overflow-hidden">
             <img src="{{asset('assets/icons/youtube.svg')}}" class="w-full h-full object-contain" alt="youtube">
           </div>
         </a>
-        <a href="">
+        <a href="https://wa.me/">
           <div class="w-6 h-6 flex shrink-0 overflow-hidden">
             <img src="{{asset('assets/icons/whatsapp.svg')}}" class="w-full h-full object-contain" alt="whatsapp">
           </div>
         </a>
-        <a href="">
+        <a href="https://www.facebook.com/">
           <div class="w-6 h-6 flex shrink-0 overflow-hidden">
             <img src="{{asset('assets/icons/facebook.svg')}}" class="w-full h-full object-contain" alt="facebook">
           </div>
         </a>
-        <a href="">
+        <a href="https://www.instagram.com/">
           <div class="w-6 h-6 flex shrink-0 overflow-hidden">
             <img src="{{asset('assets/icons/instagram.svg')}}" class="w-full h-full object-contain" alt="instagram">
           </div>
@@ -420,24 +420,24 @@
     <div class="flex flex-wrap gap-[50px]">
       <div class="flex flex-col w-[200px] gap-3">
         <p class="font-bold text-lg text-white">Products</p>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">General Contract</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Building Assessment</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">3D Paper Builder</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Legal Constructions</a>
+        <a href="general-contract.html" class="text-cp-light-grey hover:text-white transition-all duration-300">General Contract</a>
+        <a href="building-assessment.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Building Assessment</a>
+        <a href="3d-paper-builder.html" class="text-cp-light-grey hover:text-white transition-all duration-300">3D Paper Builder</a>
+        <a href="legal-constructions.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Legal Constructions</a>
       </div>
       <div class="flex flex-col w-[200px] gap-3">
         <p class="font-bold text-lg text-white">About</p>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">We’re Hiring</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Our Big Purposes</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Investor Relations</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Media Press</a>
+        <a href="careers.html" class="text-cp-light-grey hover:text-white transition-all duration-300">We’re Hiring</a>
+        <a href="our-mission.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Our Big Purposes</a>
+        <a href="investor-relations.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Investor Relations</a>
+        <a href="media-press.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Media Press</a>
       </div>
       <div class="flex flex-col w-[200px] gap-3">
         <p class="font-bold text-lg text-white">Useful Links</p>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Privacy & Policy</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms & Conditions</a>
+        <a href="privacy-policy.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Privacy & Policy</a>
+        <a href="terms-conditions.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms & Conditions</a>
         <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact Us</a>
-        <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Download Template</a>
+        <a href="download-template.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Download Template</a>
       </div>
     </div>
   </div>

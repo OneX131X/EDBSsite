@@ -1,59 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# EDBS Company Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern, dynamic company website built with Laravel, featuring sections for hero banners, company information, team profiles, products, client testimonials, and appointment scheduling.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Hero Section**: Dynamic banners with achievements, headings, and video support
+- **Company About**: Detailed company information with keypoints
+- **Our Team**: Team member profiles and information
+- **Products**: Showcase company products and services
+- **Testimonials**: Client feedback and reviews
+- **Project Clients**: Display client projects and partnerships
+- **Appointments**: Contact form for scheduling appointments
+- **Statistics**: Company metrics and achievements
+- **User Management**: Authentication and role-based permissions using Spatie Laravel Permission
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies Used
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel 12.0 (PHP 8.2+)
+- **Frontend**: Tailwind CSS, Alpine.js
+- **Build Tool**: Vite
+- **Database**: MySQL/PostgreSQL (via Laravel migrations)
+- **Authentication**: Laravel Breeze
+- **Permissions**: Spatie Laravel Permission
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+1. Clone the repository:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```bash
+    git clone <repository-url>
+    cd EDBSsite
+    ```
 
-## Laravel Sponsors
+2. Install PHP dependencies:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    ```bash
+    composer install
+    ```
 
-### Premium Partners
+3. Install Node.js dependencies:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+    ```bash
+    npm install
+    ```
+
+4. Set up environment:
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+5. Run database migrations:
+
+    ```bash
+    php artisan migrate
+    ```
+
+6. (Optional) Seed the database:
+
+    ```bash
+    php artisan db:seed
+    ```
+
+7. Build assets:
+    ```bash
+    npm run build
+    ```
+
+## Usage
+
+### Development
+
+Run the development server with hot reloading:
+
+```bash
+composer run dev
+```
+
+This will start:
+
+- Laravel server on `http://localhost:8000`
+- Queue worker
+- Log monitoring
+- Vite dev server for frontend assets
+
+### Production
+
+Build assets for production:
+
+```bash
+npm run build
+```
+
+Deploy using your preferred method (e.g., Laravel Forge, Heroku, etc.).
+
+## Project Structure
+
+- `app/Models/`: Eloquent models for database entities
+- `app/Http/Controllers/`: Controllers for handling requests
+- `resources/views/`: Blade templates
+- `routes/`: Route definitions
+- `database/migrations/`: Database schema migrations
+- `public/`: Public assets
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests: `php artisan test`
+5. Submit a pull request
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License.

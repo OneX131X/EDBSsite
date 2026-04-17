@@ -10,7 +10,7 @@
                 <span class="text-cp-light-grey">/</span>
                 <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">About Us</p>
             </div>
-            <h2 class="font-bold text-4xl leading-[45px] text-center">Here Are Some Of <br> The Projects We Can Do</h2>
+            <h2 class="font-bold text-4xl leading-[45px] text-center">Here Are Some Of <br> The Projects We Do</h2>
         </div>
     </div>
 </div>
