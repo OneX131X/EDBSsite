@@ -67,11 +67,11 @@
                             </x-slot>
         
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('admin.testimonials.index')">
-                                    {{ __('Testimonials') }}
-                                </x-dropdown-link>
                                 <x-dropdown-link :href="route('admin.clients.index')">
                                     {{ __('Our Clients') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('admin.testimonials.index')">
+                                    {{ __('Testimonials') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>

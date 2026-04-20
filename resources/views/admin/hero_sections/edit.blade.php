@@ -36,7 +36,7 @@
 
                     <div class="mt-4">
                         <x-input-label for="subheading" :value="__('subheading')" />
-                        <x-text-input id="subheading" class="block mt-1 w-full" type="text" name="subheading" value="{{$hero_section->subheading}}" required autofocus autocomplete="subheading" />
+                        <textarea id="subheading" class="block mt-1 w-full" name="subheading" required autofocus autocomplete="subheading">{{$hero_section->subheading}}</textarea>
                         <x-input-error :messages="$errors->get('subheading')" class="mt-2" />
                     </div>
 

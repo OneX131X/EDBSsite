@@ -7,19 +7,19 @@
 
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg"> 
-                
+            <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg">
+
                 @if($errors->any())
-                    @foreach($errors->all() as $error)
-                        <div class="py-3 w-full rounded-3xl bg-red-500 text-white">
-                            {{$error}}
-                        </div>
-                    @endforeach
+                @foreach($errors->all() as $error)
+                <div class="py-3 w-full rounded-3xl bg-red-500 text-white">
+                    {{$error}}
+                </div>
+                @endforeach
                 @endif
 
-                <form method="POST" action="{{route('admin.hero_sections.store')}}" enctype="multipart/form-data"> 
+                <form method="POST" action="{{route('admin.hero_sections.store')}}" enctype="multipart/form-data">
                     @csrf
-                    
+
                     <div>
                         <x-input-label for="heading" :value="__('heading')" />
                         <x-text-input id="heading" class="block mt-1 w-full" type="text" name="heading" :value="old('heading')" required autofocus autocomplete="heading" />
@@ -34,7 +34,7 @@
 
                     <div class="mt-4">
                         <x-input-label for="subheading" :value="__('subheading')" />
-                        <x-text-input id="subheading" class="block mt-1 w-full" type="text" name="subheading" :value="old('subheading')" required autofocus autocomplete="subheading" />
+                        <textarea cols="30" rows="5" id="subheading" class="block mt-1 w-full" name="subheading" :value="old('subheading')" required autofocus autocomplete="subheading"></textarea>
                         <x-input-error :messages="$errors->get('subheading')" class="mt-2" />
                     </div>
 
@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-            
+
                         <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Add New Hero Section
                         </button>
