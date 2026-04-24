@@ -1,6 +1,8 @@
 @extends('front.layouts.app')
 @section('content')
 
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+
 <div id="header" class="bg-[#F6F7FA] relative">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
         <x-navbar />

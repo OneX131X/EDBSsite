@@ -1,4 +1,6 @@
-<nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
+<!-- <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3 ring-1 ring-red-500 shadow-[0_6px_20px_0_#312ECB66]"> -->
+<nav id="navbar"
+class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1130px] flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3 shadow-[0_6px_20px_0_#312ECB33] z-50 transition-all duration-500 ease-in-out">
     <div class="flex items-center gap-3">
         <div class="flex shrink-0 h-[43px] overflow-hidden">
             <img src="assets/logo/edbsicon.svg" class="object-contain w-full h-full" alt="logo">
