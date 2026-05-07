@@ -35,56 +35,32 @@
   </script>
 
   <!-- Navbar Scroll Effect -->
-  <!-- Navbar Scroll Effect -->
-<script>
+  <script>
     const navbar = document.getElementById('navbar');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
     let lastScroll = 0;
 
-    function closeMobileMenu() {
-        // Adjust these classes based on your menu system
-        mobileMenu.classList.add('hidden');
+    // Hide when scrolling down, show when scrolling up
+    window.addEventListener('scroll', function() {
+      let currentScroll = window.pageYOffset;
 
-        // Optional: burger icon reset if you use active states
-        mobileMenuButton.classList.remove('active');
-    }
+      if (currentScroll > lastScroll && currentScroll > 500) {
+        // scrolling down
+        navbar.classList.add('-translate-y-full');
+      } else {
+        // scrolling up
+        navbar.classList.remove('-translate-y-full');
+      }
 
-    function hideNavbar() {
-        // Hide navbar completely based on its actual height
-        navbar.style.transform = `translateY(-${navbar.offsetHeight}px)`;
-
-        // Reset expanded mobile menu
-        closeMobileMenu();
-    }
-
-    function showNavbar() {
-        navbar.style.transform = 'translateY(0)';
-    }
-
-    // Scroll behavior
-    window.addEventListener('scroll', function () {
-        let currentScroll = window.pageYOffset;
-
-        if (currentScroll > lastScroll && currentScroll > 500) {
-            // scrolling down
-            hideNavbar();
-        } else {
-            // scrolling up
-            showNavbar();
-        }
-
-        lastScroll = currentScroll;
+      lastScroll = currentScroll;
     });
 
-    // Show navbar when cursor near top
-    document.addEventListener('mousemove', function (e) {
-        if (e.clientY < 80) {
-            showNavbar();
-        }
+    // Show when mouse goes near top
+    document.addEventListener('mousemove', function(e) {
+      if (e.clientY < 80) {
+        navbar.classList.remove('-translate-y-full');
+      }
     });
-</script>
+  </script>
 
   <!-- Back to Top Button -->
   <script>
