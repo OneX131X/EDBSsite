@@ -45,10 +45,10 @@
 
       if (currentScroll > lastScroll && currentScroll > 500) {
         // scrolling down
-        navbar.classList.add('-translate-y-322');
+        navbar.classList.add('-translate-y-32');
       } else {
         // scrolling up
-        navbar.classList.remove('-translate-y-322');
+        navbar.classList.remove('-translate-y-32');
       }
 
       lastScroll = currentScroll;
@@ -57,7 +57,7 @@
     // Show when mouse goes near top
     document.addEventListener('mousemove', function(e) {
       if (e.clientY < 80) {
-        navbar.classList.remove('-translate-y-322');
+        navbar.classList.remove('-translate-y-32');
       }
     });
   </script>
