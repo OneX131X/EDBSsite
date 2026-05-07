@@ -35,32 +35,56 @@
   </script>
 
   <!-- Navbar Scroll Effect -->
-  <script>
+  <!-- Navbar Scroll Effect -->
+<script>
     const navbar = document.getElementById('navbar');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
     let lastScroll = 0;
 
-    // Hide when scrolling down, show when scrolling up
-    window.addEventListener('scroll', function() {
-      let currentScroll = window.pageYOffset;
+    function closeMobileMenu() {
+        // Adjust these classes based on your menu system
+        mobileMenu.classList.add('hidden');
 
-      if (currentScroll > lastScroll && currentScroll > 500) {
-        // scrolling down
-        navbar.classList.add('-translate-y-full');
-      } else {
-        // scrolling up
-        navbar.classList.remove('-translate-y-full');
-      }
+        // Optional: burger icon reset if you use active states
+        mobileMenuButton.classList.remove('active');
+    }
 
-      lastScroll = currentScroll;
+    function hideNavbar() {
+        // Hide navbar completely based on its actual height
+        navbar.style.transform = `translateY(-${navbar.offsetHeight}px)`;
+
+        // Reset expanded mobile menu
+        closeMobileMenu();
+    }
+
+    function showNavbar() {
+        navbar.style.transform = 'translateY(0)';
+    }
+
+    // Scroll behavior
+    window.addEventListener('scroll', function () {
+        let currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll && currentScroll > 500) {
+            // scrolling down
+            hideNavbar();
+        } else {
+            // scrolling up
+            showNavbar();
+        }
+
+        lastScroll = currentScroll;
     });
 
-    // Show when mouse goes near top
-    document.addEventListener('mousemove', function(e) {
-      if (e.clientY < 80) {
-        navbar.classList.remove('-translate-y-full');
-      }
+    // Show navbar when cursor near top
+    document.addEventListener('mousemove', function (e) {
+        if (e.clientY < 80) {
+            showNavbar();
+        }
     });
-  </script>
+</script>
 
   <!-- Back to Top Button -->
   <script>
