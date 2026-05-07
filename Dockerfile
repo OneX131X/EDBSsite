@@ -27,6 +27,9 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+# Create storage symlink
+RUN php artisan storage:link || true
+
 # Install Node dependencies
 RUN npm install
 
