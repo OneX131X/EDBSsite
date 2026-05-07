@@ -41,44 +41,26 @@
 
     // Hide when scrolling down, show when scrolling up
     window.addEventListener('scroll', function() {
-      <script>
-document.addEventListener("DOMContentLoaded", function () {
+      let currentScroll = window.pageYOffset;
 
-    const navbar = document.getElementById("navbar");
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("mobileMenu");
+      if (currentScroll > lastScroll && currentScroll > 500) {
+        // scrolling down
+        navbar.classList.add('-translate-y-32');
+      } else {
+        // scrolling up
+        navbar.classList.remove('-translate-y-32');
+      }
 
-    let lastScroll = 0;
-
-    // MOBILE MENU TOGGLE
-    btn.addEventListener("click", function () {
-        menu.classList.toggle("hidden");
+      lastScroll = currentScroll;
     });
 
-    // NAVBAR HIDE ON SCROLL
-    window.addEventListener("scroll", function () {
-
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > lastScroll && currentScroll > 100) {
-
-            // scrolling down
-            navbar.style.transform =
-                `translate(-50%, -${navbar.offsetHeight + 20}px)`;
-
-        } else {
-
-            // scrolling up
-            navbar.style.transform =
-                "translate(-50%, 0)";
-
-        }
-
-        lastScroll = currentScroll;
+    // Show when mouse goes near top
+    document.addEventListener('mousemove', function(e) {
+      if (e.clientY < 80) {
+        navbar.classList.remove('-translate-y-32');
+      }
     });
-
-});
-</script>
+  </script>
 
   <!-- Back to Top Button -->
   <script>
