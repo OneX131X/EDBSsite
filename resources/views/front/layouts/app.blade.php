@@ -36,31 +36,48 @@
 
   <!-- Navbar Scroll Effect -->
   <script>
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
+  const navbar = document.getElementById('navbar');
+  const mobileMenu = document.getElementById('mobileMenu'); // your dropdown
+  let lastScroll = 0;
 
-    // Hide when scrolling down, show when scrolling up
-    window.addEventListener('scroll', function() {
-      let currentScroll = window.pageYOffset;
+  function closeMenu() {
+    navbar.classList.remove('menu-open'); // your state class if any
+    mobileMenu?.classList.add('hidden');  // or 'max-h-0', etc.
+  }
 
-      if (currentScroll > lastScroll && currentScroll > 500) {
-        // scrolling down
-        navbar.classList.add('-translate-y-full');
-      } else {
-        // scrolling up
-        navbar.classList.remove('-translate-y-full');
-      }
+  function showNavbar() {
+    navbar.style.transform = 'translateY(0)';
+  }
 
-      lastScroll = currentScroll;
-    });
+  function hideNavbar() {
+    const height = navbar.offsetHeight;
+    navbar.style.transform = `translateY(-${height}px)`;
 
-    // Show when mouse goes near top
-    document.addEventListener('mousemove', function(e) {
-      if (e.clientY < 80) {
-        navbar.classList.remove('-translate-y-full');
-      }
-    });
-  </script>
+    // 🔥 IMPORTANT: reset expanded state when hiding
+    closeMenu();
+  }
+
+  window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 500) {
+      hideNavbar();
+    } else {
+      showNavbar();
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (e.clientY < 80) {
+      showNavbar();
+
+      // optional but recommended:
+      closeMenu(); // ensures it never reopens in expanded state
+    }
+  });
+</script>
 
   <!-- Back to Top Button -->
   <script>
