@@ -1,36 +1,44 @@
-# Base PHP + Apache
-FROM php:8.2-apache
+FROM php:8.2-cli
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    libzip-dev zip unzip git curl nodejs npm
-
-# Install PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql zip
-
-# Enable Apache rewrite
-RUN a2enmod rewrite
-
-# Set working directory
-WORKDIR /var/www/html
-
-# Copy project files
-COPY . .
+    git \
+    unzip \
+    curl \
+    libzip-dev \
+    zip \
+    && docker-php-ext-install pdo pdo_mysql zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Install Node.js from NodeSource (lighter)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy project files
+COPY . .
+
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Install Node dependencies & build frontend
-RUN npm install && npm run build
+# Install Node dependencies
+RUN npm install
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage
+# Build frontend assets
+RUN npm run build
 
-# Set Laravel public folder as root
-RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' /etc/apache2/sites-available/000-default.conf
+# Laravel setup
+RUN cp .env.example .env || true
+RUN php artisan key:generate || true
 
-EXPOSE 80
+# Expose Railway port
+EXPOSE 8080
+
+# Start Laravel server
+CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
