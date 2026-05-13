@@ -2,162 +2,282 @@
 @section('content')
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-<div id="header" class="bg-[#F6F7FA] relative overflow-hidden pt-14">
-  <div class="container max-w-[1130px] mx-auto relative pt-10 z-10 px-4 lg:px-0">
+<div id="header"
+  class="bg-[#F6F7FA] relative overflow-hidden
+         pt-20 sm:pt-28 lg:pt-14">
+
+  @forelse($hero_section as $hero)
+
+  <input type="hidden" name="path_video" id="path_video" value="{{$hero->path_video}}">
+
+  <div
+    class="container max-w-[1130px] mx-auto
+           relative z-10
+           px-4 lg:px-0
+           pt-0 lg:pt-10">
+
     <x-navbar />
 
-    @forelse($hero_section as $hero)
-    <input type="hidden" name="path_video" id="path_video" value="{{$hero->path_video}}">
+    <!-- HERO -->
+    <div id="Hero"
+      class="relative flex flex-col
+             gap-6 sm:gap-8 lg:gap-[30px]
+             mt-20 sm:mt-14 lg:mt-20
+             pb-4 sm:pb-14 lg:pb-20">
 
-    <!-- DESKTOP keeps original layout -->
-    <div id="Hero" class="flex flex-col gap-[30px] mt-12 lg:mt-20 pb-12 lg:pb-20">
+      <!-- Achievement Badge -->
+      <div
+        class="hidden sm:flex items-center
+               bg-white/90 backdrop-blur-sm
+               p-[8px_16px]
+               gap-[10px]
+               rounded-full
+               w-fit max-w-full
+               shadow-sm border border-white/50">
 
-      <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit max-w-full">
         <div class="w-5 h-5 flex shrink-0 overflow-hidden">
-          <img src="{{asset('assets/icons/crown.svg')}}" class="object-contain" alt="icon">
+
+          <img
+            src="{{asset('assets/icons/crown.svg')}}"
+            class="object-contain"
+            alt="icon">
+
         </div>
-        <p class="font-semibold text-sm leading-tight">
+
+        <p class="font-semibold text-xs sm:text-sm leading-tight">
+
           {{$hero->achievement}}
+
         </p>
+
       </div>
 
-      <div class="flex flex-col gap-[10px]">
-        <!-- ORIGINAL DESKTOP SIZE PRESERVED -->
+      <!-- Heading + Subheading -->
+      <div
+        class="flex flex-col gap-3 sm:gap-4
+               max-w-[92%]
+               sm:max-w-[85%]
+               lg:max-w-full">
+
         <h1
-          class="font-extrabold text-[38px] leading-[46px] max-w-full
-                 sm:text-[46px] sm:leading-[54px]
-                 lg:text-[56px] lg:leading-[65px] lg:max-w-[56%]"
+          class="font-extrabold
+                 text-[32px] leading-[40px]
+                 sm:text-[42px] sm:leading-[50px]
+                 lg:text-[56px] lg:leading-[65px]
+                 lg:max-w-[56%]"
           data-aos="fade-up"
           data-aos-delay="100">
           {{$hero->heading}}
         </h1>
 
         <p
-          class="text-cp-light-grey leading-[28px] max-w-full
-                 lg:leading-[30px] lg:max-w-[50%]"
+          class="text-sm sm:text-base text-cp-light-grey
+                 leading-[26px]
+                 max-w-full
+                 lg:leading-[30px]
+                 lg:max-w-[50%]"
           data-aos="fade-up"
           data-aos-delay="200">
           {{$hero->subheading}}
         </p>
       </div>
 
-      <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+      <!-- Buttons -->
+      <div id="hero-buttons"
+        class="flex flex-row items-center
+         gap-3 sm:gap-4
+         w-full sm:w-auto">
 
         <div data-aos="zoom-in" data-aos-delay="300">
+
           <a href=""
-            class="bg-cp-dark-blue px-6 py-4 w-full sm:w-fit text-center rounded-xl font-bold text-white transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1 inline-block">
+            class="bg-cp-dark-blue px-6 py-4
+                   flex-1 sm:flex-none text-center
+                   rounded-xl font-bold text-white
+                   transition-all duration-300
+                   hover:shadow-[0_12px_30px_0_#312ECB66]
+                   hover:-translate-y-1 inline-block">
             View Projects
           </a>
         </div>
 
         <div data-aos="zoom-in" data-aos-delay="400">
           <button
-            class="bg-cp-black px-6 py-4 w-full sm:w-fit rounded-xl font-bold text-white flex items-center justify-center gap-[10px] transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1"
+            class="bg-cp-black px-6 py-4
+                   flex-1 sm:flex-none rounded-xl
+                   font-bold text-white
+                   flex items-center justify-center gap-[10px]
+                   transition-all duration-300
+                   hover:shadow-[0_12px_30px_0_#312ECB66]
+                   hover:-translate-y-1"
             onclick="{modal.show()}">
 
             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img src="{{asset('assets/icons/play-circle.svg')}}"
+              <img
+                src="{{asset('assets/icons/play-circle.svg')}}"
                 class="w-full h-full object-contain"
                 alt="icon">
-            </div>
 
+            </div>
             <span>Company Profile</span>
           </button>
         </div>
+      </div>
+
+      <!-- MOBILE BANNER -->
+      <div
+        class="relative w-full h-[260px]
+               sm:h-[380px]
+               lg:hidden
+               overflow-hidden rounded-[5px]
+               border border-[blue]
+               mt-2">
+
+        <img
+          src="{{Storage::url($hero->banner)}}"
+          class="object-cover w-full h-full"
+          alt="banner">
 
       </div>
     </div>
-
   </div>
 
-  <!-- ORIGINAL DESKTOP BANNER PRESERVED -->
+  <!-- DESKTOP BANNER -->
   <div
-    class="relative w-full h-[260px] mt-6
-           sm:h-[380px]
-           lg:absolute lg:w-[43%] lg:h-full lg:top-0 lg:right-0 lg:mt-0 overflow-hidden z-0">
+    class="hidden lg:block
+           absolute w-[43%] h-full
+           top-0 right-0 overflow-hidden z-0">
+
     <img
-      src="{{Storage::url($hero->banner )}}"
+      src="{{Storage::url($hero->banner)}}"
       class="object-cover w-full h-full"
       alt="banner">
-  </div>
 
+  </div>
   @empty
   <p>belum ada update data terbaru</p>
   @endforelse
 </div>
-<div id="Clients" class="container max-w-[1130px] mx-auto px-4 lg:px-0 flex flex-col justify-center text-center gap-5 mt-16 lg:mt-20 pt-6 lg:pt-10">
+
+<div id="Clients" class="max-w-screen mx-auto px-4 lg:px-0 flex flex-col justify-center text-center gap-5 mt-16 lg:mt-20 pt-6 lg:pt-10">
 
   <!-- Heading -->
   <h2 class="font-bold text-lg sm:text-xl">
     Trusted by Clients & Project Partners
   </h2>
 
-  <!-- Logos -->
-  <div class="logo-container grid grid-cols-2 lg:flex lg:flex-wrap gap-4 lg:gap-5 justify-center">
+  <!-- Logos Slider -->
+  <div class="overflow-hidden relative w-full">
 
-  <div data-aos="fade-up" data-aos-delay="100">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Fortis Primera</span>
+    <div class="logo-track flex items-center gap-4 lg:gap-5 w-max">
+
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Fortis Primera</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="200">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Fortuna Kontraktor</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="300">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Imanuel Teknik Sentosa</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="400">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Surya Sukses Maju</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="500">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Tunggak Jati</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="600">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Bayanaka Karya</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="700">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. EPKS</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="800">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Duta Bangsa Mandiri</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="900">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Vava Enviro Utama Fiberglass</span>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">CV. Alghi Citra Kreasi</span>
+        </div>
+      </div>
+
+      <!-- DUPLICATE ITEMS FOR INFINITE LOOP -->
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortis Primera</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortuna Kontraktor</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Imanuel Teknik Sentosa</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Surya Sukses Maju</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Tunggak Jati</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Bayanaka Karya</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. EPKS</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Duta Bangsa Mandiri</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Vava Enviro Utama Fiberglass</span>
+      </div>
+
+      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">CV. Alghi Citra Kreasi</span>
+      </div>
+
     </div>
   </div>
-
-  <div data-aos="fade-up" data-aos-delay="200">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Fortuna Kontraktor</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="300">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Imanuel Teknik Sentosa</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="400">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Surya Sukses Maju</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="500">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Tunggak Jati</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="600">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Bayanaka Karya</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="700">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. EPKS</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="800">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Duta Bangsa Mandiri</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="900">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">PT. Vava Enviro Utama Fiberglass</span>
-    </div>
-  </div>
-
-  <div data-aos="fade-up" data-aos-delay="1000">
-    <div class="logo-card min-h-[68px] w-full lg:w-fit flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-      <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center">CV. Alghi Citra Kreasi</span>
-    </div>
-  </div>
-
 </div>
 
-</div>
 <div id="OurPrinciples" class="container max-w-[1130px] mx-auto px-4 lg:px-0 flex flex-col gap-[30px] mt-16 lg:mt-28">
 
   <!-- Heading -->
@@ -225,6 +345,7 @@
 
   </div>
 </div>
+
 <div id="Stats" class="bg-cp-black w-full mt-16 lg:mt-24">
 
   <div class="container max-w-[1000px] mx-auto px-4 lg:px-0 py-10">
@@ -261,17 +382,17 @@
   </div>
 
 </div>
+
 <div class="container max-w-full mx-auto flex flex-col mt-20"></div>
-<div id="Products" class="container max-w-[1130px] mx-auto px-4 lg:px-0 flex flex-col gap-14 lg:gap-20 mt-16 lg:mt-28">
+
+<div id="Products" class="max-w-screen mx-auto px-4 lg:px-0 flex flex-col gap-14 lg:gap-20 mt-16 lg:mt-28">
 
   @forelse($products as $product)
   <div
-    class="product flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[30px] lg:gap-[60px] even:lg:flex-row-reverse"
-    data-aos="zoom-in-up"
-    data-aos-delay="{{ ($loop->index % 4) * 200 }}">
+    class="product flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[70px] lg:gap-[160px] even:lg:flex-row-reverse">
 
     <!-- Image -->
-    <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden">
+    <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden product-image">
       <img src="{{Storage::url($product->thumbnail)}}"
         class="w-full h-full object-contain"
         alt="thumbnail">
@@ -511,9 +632,9 @@
 
 </div>
 <div id="Strengths" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20 lg:mt-32 px-4 sm:px-6">
-  
+
   <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-    
+
     <div class="flex flex-col gap-[14px] text-center lg:text-left">
       <p class="badge w-fit mx-auto lg:mx-0 bg-cp-pale-blue text-cp-light-blue px-4 py-2 rounded-full uppercase font-bold text-xs sm:text-sm">
         OUR STRENGTHS
@@ -535,80 +656,80 @@
   <div class="awards-card-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-[30px] justify-center">
 
     <!-- <div data-aos="fade-up" data-aos-delay="50"> -->
-      <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
-          Certified & Skilled Workforce
-        </p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
-          Experienced field team with strong technical capability.
-        </p>
+    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
+      <div class="w-[55px] h-[55px] flex shrink-0">
+        <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
+      <hr class="border-[#E8EAF2]">
+      <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
+        Certified & Skilled Workforce
+      </p>
+      <hr class="border-[#E8EAF2]">
+      <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
+        Experienced field team with strong technical capability.
+      </p>
+    </div>
     <!-- </div> -->
 
     <!-- <div data-aos="fade-up" data-aos-delay="100"> -->
-      <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
-          On-Time Project Delivery
-        </p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
-          Efficient planning and execution to meet deadlines.
-        </p>
+    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
+      <div class="w-[55px] h-[55px] flex shrink-0">
+        <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
+      <hr class="border-[#E8EAF2]">
+      <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
+        On-Time Project Delivery
+      </p>
+      <hr class="border-[#E8EAF2]">
+      <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
+        Efficient planning and execution to meet deadlines.
+      </p>
+    </div>
     <!-- </div> -->
 
     <!-- <div data-aos="fade-up" data-aos-delay="150"> -->
-      <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
-          Safety First Culture
-        </p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
-          Committed to workplace safety in every operation.
-        </p>
+    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
+      <div class="w-[55px] h-[55px] flex shrink-0">
+        <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
+      <hr class="border-[#E8EAF2]">
+      <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
+        Safety First Culture
+      </p>
+      <hr class="border-[#E8EAF2]">
+      <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
+        Committed to workplace safety in every operation.
+      </p>
+    </div>
     <!-- </div> -->
 
     <!-- <div data-aos="fade-up" data-aos-delay="200"> -->
-      <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-        <div class="w-[55px] h-[55px] flex shrink-0">
-          <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
-        </div>
-        <hr class="border-[#E8EAF2]">
-        <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
-          Quality Control Standards
-        </p>
-        <hr class="border-[#E8EAF2]">
-        <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
-          Consistent supervision to ensure high-quality results.
-        </p>
+    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
+      <div class="w-[55px] h-[55px] flex shrink-0">
+        <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
+      <hr class="border-[#E8EAF2]">
+      <p class="font-bold text-lg lg:text-xl leading-snug lg:leading-[30px]">
+        Quality Control Standards
+      </p>
+      <hr class="border-[#E8EAF2]">
+      <p class="text-sm sm:text-base text-cp-light-grey leading-relaxed">
+        Consistent supervision to ensure high-quality results.
+      </p>
+    </div>
     <!-- </div> -->
 
   </div>
 </div>
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-16 lg:py-20 px-4 sm:px-6 mt-20 -mb-20 lg:-mb-28">
-  
+
   <div class="container max-w-[1000px] mx-auto">
-    
+
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-[70px] items-start lg:items-center">
-      
+
       <!-- Left Content -->
       <div class="flex flex-col gap-6 lg:gap-[30px] w-full lg:w-auto text-center lg:text-left">
-        
+
         <div class="flex flex-col gap-[10px]">
           <h2 class="font-bold text-2xl sm:text-3xl lg:text-4xl leading-snug lg:leading-[45px]">
             Common Questions From Our Clients
@@ -700,7 +821,7 @@
       </div>
 
     </div>
-    
+
   </div>
 </div>
 
@@ -793,6 +914,16 @@
       EDBS
     </p>
   </div>
+
+  <div class="text-center text-xs sm:text-sm text-gray-500">
+    <p class="text-center text-[11px] text-gray-400/50 mt-3 transition hover:text-gray-400">
+      © 2026 PT. Etika Dharma Bangun Sarana <br>
+    </p>
+    <p class="text-center text-xs sm:text-sm text-gray-500">
+      Website developed by Kurniawan Rasyidi
+    </p>
+  </div>
+
 
 </footer>
 <div id="video-modal" tabindex="-1" aria-hidden="true"

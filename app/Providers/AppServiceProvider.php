@@ -19,9 +19,22 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
+    public function boot(): void
+    {
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
+        Gate::before(function ($user, $ability) {
+            if ($user->hasRole('super_admin')) {
+                return true;
+            }
+        });
+    }
+
     // public function boot(): void
     // {
-    //     if ($this->app->environment('production')) {
+    //     if (app()->environment('production')) {
     //         URL::forceScheme('https');
     //     }
 
@@ -31,17 +44,4 @@ class AppServiceProvider extends ServiceProvider
     //         }
     //     });
     // }
-
-    public function boot(): void
-{
-    if (app()->environment('production')) {
-        URL::forceScheme('https');
-    }
-
-    Gate::before(function ($user, $ability) {
-        if($user->hasRole('super_admin')) {
-            return true;
-        }
-    });
-}
 }
