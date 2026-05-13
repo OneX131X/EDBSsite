@@ -31,32 +31,4 @@ class AppServiceProvider extends ServiceProvider
             }
         });
     }
-
-<<<<<<< HEAD
-    // public function boot(): void
-    // {
-    //     if (app()->environment('production')) {
-    //         URL::forceScheme('https');
-    //     }
-
-    //     Gate::before(function ($user, $ability) {
-    //         if ($user->hasRole('super_admin')) {
-    //             return true;
-    //         }
-    //     });
-    // }
-=======
-//     public function boot(): void
-// {
-//     if (app()->environment('production')) {
-//         URL::forceScheme('https');
-//     }
-
-//     Gate::before(function ($user, $ability) {
-//         if($user->hasRole('super_admin')) {
-//             return true;
-//         }
-//     });
-// }
->>>>>>> 07f73bebd47021456b3e5570684ed4e62770f0c2
 }
