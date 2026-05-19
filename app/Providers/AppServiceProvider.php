@@ -31,7 +31,6 @@ class AppServiceProvider extends ServiceProvider
             }
         });
     }
-<<<<<<< HEAD
 
     // public function boot(): void
     // {
@@ -45,6 +44,4 @@ class AppServiceProvider extends ServiceProvider
     //         }
     //     });
     // }
-=======
->>>>>>> 7331e01c13333fedfe50ebcbbf7665da71dafdda
 }
