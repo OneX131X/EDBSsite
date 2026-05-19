@@ -22,7 +22,7 @@
     <div id="Hero"
       class="relative flex flex-col
              gap-6 sm:gap-8 lg:gap-[30px]
-             mt-20 sm:mt-14 lg:mt-20
+             mt-10 sm:mt-14 lg:mt-20
              pb-4 sm:pb-14 lg:pb-20">
 
       <!-- Achievement Badge -->
@@ -55,7 +55,7 @@
       <!-- Heading + Subheading -->
       <div
         class="flex flex-col gap-3 sm:gap-4
-               max-w-[92%]
+               max-w-full
                sm:max-w-[85%]
                lg:max-w-full">
 
@@ -72,7 +72,7 @@
 
         <p
           class="text-sm sm:text-base text-cp-light-grey
-                 leading-[26px]
+                 leading-[24px]
                  max-w-full
                  lg:leading-[30px]
                  lg:max-w-[50%]"
@@ -84,16 +84,16 @@
 
       <!-- Buttons -->
       <div id="hero-buttons"
-        class="flex flex-row items-center
-         gap-3 sm:gap-4
-         w-full sm:w-auto">
+        class="flex flex-row justify-center lg:justify-start items-center
+         gap-5 sm:gap-4
+         w-full sm:w-full">
 
         <div data-aos="zoom-in" data-aos-delay="300">
-
           <a href=""
-            class="bg-cp-dark-blue px-6 py-4
+            class="bg-cp-dark-blue px-8 py-4
                    flex-1 sm:flex-none text-center
-                   rounded-xl font-bold text-white
+                   rounded-lg font-bold text-white
+                   text-sm sm:text-base
                    transition-all duration-300
                    hover:shadow-[0_12px_30px_0_#312ECB66]
                    hover:-translate-y-1 inline-block">
@@ -103,30 +103,30 @@
 
         <div data-aos="zoom-in" data-aos-delay="400">
           <button
-            class="bg-cp-black px-6 py-4
-                   flex-1 sm:flex-none rounded-xl
+            class="bg-cp-black px-4 py-4
+                   flex-1 sm:flex-none rounded-lg
                    font-bold text-white
+                   text-xs sm:text-base
                    flex items-center justify-center gap-[10px]
                    transition-all duration-300
                    hover:shadow-[0_12px_30px_0_#312ECB66]
-                   hover:-translate-y-1"
+                   hover:-translate-y-1 bg-transparent border border-[#0B0B45] text-[#0B0B45]"
             onclick="{modal.show()}">
 
             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <img
-                src="{{asset('assets/icons/play-circle.svg')}}"
-                class="w-full h-full object-contain"
-                alt="icon">
-
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#080735" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
             </div>
-            <span>Company Profile</span>
+            <span class="text-cp-black">Company Profile</span>
           </button>
         </div>
       </div>
 
       <!-- MOBILE BANNER -->
       <div
-        class="relative w-full h-[260px]
+        class="relative w-full h-[200px]
                sm:h-[380px]
                lg:hidden
                overflow-hidden rounded-[5px]
@@ -135,7 +135,7 @@
 
         <img
           src="{{Storage::url($hero->banner)}}"
-          class="object-cover w-full h-full"
+          class="object-cover object-center w-full h-full"
           alt="banner">
 
       </div>
@@ -234,44 +234,65 @@
 
       <!-- DUPLICATE ITEMS FOR INFINITE LOOP -->
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortis Primera</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortis Primera</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortuna Kontraktor</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortuna Kontraktor</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Imanuel Teknik Sentosa</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Imanuel Teknik Sentosa</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Surya Sukses Maju</span>
+
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Surya Sukses Maju</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Tunggak Jati</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Tunggak Jati</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Bayanaka Karya</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Bayanaka Karya</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. EPKS</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. EPKS</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Duta Bangsa Mandiri</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Duta Bangsa Mandiri</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Vava Enviro Utama Fiberglass</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Vava Enviro Utama Fiberglass</span>
+        </div>
       </div>
 
-      <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
-        <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">CV. Alghi Citra Kreasi</span>
+      <div data-aos="fade-up" data-aos-delay="1000">
+        <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">CV. Alghi Citra Kreasi</span>
+        </div>
       </div>
 
     </div>
@@ -350,11 +371,15 @@
 
   <div class="container max-w-[1000px] mx-auto px-4 lg:px-0 py-10">
 
-    <div class="grid grid-cols-2 lg:flex lg:flex-wrap items-center justify-between gap-y-8 gap-x-4 p-[10px]">
+    <div class="grid grid-cols-2 place-items-center lg:flex lg:flex-wrap items-center justify-between gap-y-8 gap-x-6 p-[10px]">
 
       @forelse($statistics as $statistic)
+      @php
+      $isLastOdd = $loop->last && $loop->count % 2 !== 0;
+      @endphp
       <div
-        class="card w-full lg:w-[200px] flex flex-col items-center gap-[10px] text-center"
+        class="card flex flex-col items-center gap-[10px] text-center w-fit
+           {{ $isLastOdd ? 'col-span-2 justify-self-center' : '' }}"
         data-aos="zoom-in"
         data-aos-delay="{{ min($loop->iteration * 100, 400) }}">
 
@@ -825,107 +850,200 @@
   </div>
 </div>
 
-<footer class="bg-cp-black w-full relative overflow-hidden mt-20">
+<footer class="bg-cp-black w-full relative overflow-hidden mt-20 border-t border-white/10">
 
-  <div class="container max-w-[1130px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-y-4 lg:items-center lg:justify-between px-4 sm:px-6 pt-16 lg:pt-[100px] pb-16 lg:pb-[220px] relative z-60">
+  <div class="container max-w-[1130px] mx-auto px-4 sm:px-6 pt-16 lg:pt-24 pb-14 lg:pb-24 relative z-10">
 
-    <!-- Left Side -->
-    <div class="flex flex-col gap-8 lg:gap-10 items-center lg:items-start text-center lg:text-left">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-14 lg:gap-20">
 
-      <div class="flex items-center gap-3 justify-center lg:justify-start">
-        <div class="flex shrink-0 h-[43px] overflow-hidden">
-          <img src="{{asset('assets/logo/edbsicon.svg')}}" class="object-contain w-full h-full" alt="logo">
+      <!-- LEFT -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+
+          <div class="flex shrink-0 h-[45px] overflow-hidden">
+            <img
+              src="{{asset('assets/logo/edbsicon.svg')}}"
+              class="object-contain w-full h-full"
+              alt="logo">
+          </div>
+
+          <div class="flex flex-col leading-tight">
+            <p
+              id="CompanyName"
+              class="font-extrabold text-xl text-white">
+              EDBS
+            </p>
+
+            <p
+              id="CompanyTagline"
+              class="text-sm text-white/60">
+              PT. Etika Dharma Bangun Sarana
+            </p>
+          </div>
         </div>
 
-        <div class="flex flex-col">
-          <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">
-            EDBS
-          </p>
-          <p id="CompanyTagline" class="text-sm text-cp-light-grey">
-            PT. Etika Dharma Bangun Sarana
-          </p>
+        <!-- Description -->
+        <p class="mt-6 text-sm leading-7 text-white/60 max-w-[420px]">
+          PT. Etika Dharma Bangun Sarana provides reliable civil,
+          industrial, and infrastructure construction solutions with
+          strong commitment to quality, safety, and professionalism.
+        </p>
+
+        <!-- Social -->
+        <div class="flex items-center gap-4 mt-8">
+          <a href="https://www.youtube.com/"
+            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all duration-300">
+            <div class="w-5 h-5 flex shrink-0 overflow-hidden">
+              <img
+                src="{{asset('assets/icons/youtube.svg')}}"
+                class="w-full h-full object-contain"
+                alt="youtube">
+            </div>
+          </a>
+
+          <a href="https://wa.me/"
+            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all duration-300">
+
+            <div class="w-5 h-5 flex shrink-0 overflow-hidden">
+              <img
+                src="{{asset('assets/icons/whatsapp.svg')}}"
+                class="w-full h-full object-contain"
+                alt="whatsapp">
+            </div>
+          </a>
+
+          <a href="https://www.facebook.com/"
+            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all duration-300">
+            <div class="w-5 h-5 flex shrink-0 overflow-hidden">
+              <img
+                src="{{asset('assets/icons/facebook.svg')}}"
+                class="w-full h-full object-contain"
+                alt="facebook">
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/"
+            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all duration-300">
+            <div class="w-5 h-5 flex shrink-0 overflow-hidden">
+              <img
+                src="{{asset('assets/icons/instagram.svg')}}"
+                class="w-full h-full object-contain"
+                alt="instagram">
+            </div>
+          </a>
         </div>
       </div>
 
-      <div class="flex items-center gap-4">
-        <a href="https://www.youtube.com/">
-          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-            <img src="{{asset('assets/icons/youtube.svg')}}" class="w-full h-full object-contain" alt="youtube">
-          </div>
-        </a>
+      <!-- QUICK LINKS -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+        <p class="font-bold text-lg text-white mb-5">
+          Quick Links
+        </p>
 
-        <a href="https://wa.me/">
-          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-            <img src="{{asset('assets/icons/whatsapp.svg')}}" class="w-full h-full object-contain" alt="whatsapp">
-          </div>
-        </a>
+        <div class="flex flex-col gap-4">
 
-        <a href="https://www.facebook.com/">
-          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-            <img src="{{asset('assets/icons/facebook.svg')}}" class="w-full h-full object-contain" alt="facebook">
-          </div>
-        </a>
+          <a href="{{route('front.index')}}"
+            class="group relative h-6 overflow-hidden inline-flex">
+            <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
+              <span class="h-6 text-white/60">
+                Home
+              </span>
+              <span class="h-6 text-cp-pale-orange">
+                Home
+              </span>
+            </span>
+          </a>
 
-        <a href="https://www.instagram.com/">
-          <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-            <img src="{{asset('assets/icons/instagram.svg')}}" class="w-full h-full object-contain" alt="instagram">
-          </div>
-        </a>
+          <a href="{{route('front.product')}}"
+            class="group relative h-6 overflow-hidden inline-flex">
+            <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
+              <span class="h-6 text-white/60">
+                Projects
+              </span>
+              <span class="h-6 text-cp-pale-orange">
+                Projects
+              </span>
+            </span>
+          </a>
+
+          <a href="{{route('front.team')}}"
+            class="group relative h-6 overflow-hidden inline-flex">
+            <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
+              <span class="h-6 text-white/60">
+                Company
+              </span>
+              <span class="h-6 text-cp-pale-orange">
+                Company
+              </span>
+            </span>
+          </a>
+
+          <a href="{{route('front.about')}}"
+            class="group relative h-6 overflow-hidden inline-flex">
+            <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
+              <span class="h-6 text-white/60">
+                About Us
+              </span>
+              <span class="h-6 text-cp-pale-orange">
+                About Us
+              </span>
+            </span>
+          </a>
+
+        </div>
       </div>
 
-    </div>
+      <!-- CONTACT -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+        <p class="font-bold text-lg text-white mb-5">
+          Contact
+        </p>
 
-    <!-- Right Side Links -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[50px] w-full lg:w-auto text-center sm:text-left">
-
-      <!-- Products -->
-      <div class="flex flex-col sm:w-[200px] gap-3">
-        <p class="font-bold text-lg text-white">Products</p>
-        <a href="general-contract.html" class="text-cp-light-grey hover:text-white transition-all duration-300">General Contract</a>
-        <a href="building-assessment.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Building Assessment</a>
-        <a href="3d-paper-builder.html" class="text-cp-light-grey hover:text-white transition-all duration-300">3D Paper Builder</a>
-        <a href="legal-constructions.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Legal Constructions</a>
+        <div class="flex flex-col gap-4 text-white/60 leading-7">
+          <p>
+            Surabaya, Indonesia
+          </p>
+          <p>
+            info@edbs.co.id
+          </p>
+          <p>
+            +62 812-3456-7890
+          </p>
+          <a
+            href="{{route('front.appointment')}}"
+            class="text-cp-pale-orange hover:text-white transition-all duration-300">
+            Get a Quote →
+          </a>
+        </div>
       </div>
-
-      <!-- Company -->
-      <div class="flex flex-col sm:w-[200px] gap-3">
-        <p class="font-bold text-lg text-white">Company</p>
-        <a href="{{route('front.about')}}" class="text-cp-light-grey hover:text-white transition-all duration-300">About Us</a>
-        <a href="{{route('front.team')}}" class="text-cp-light-grey hover:text-white transition-all duration-300">Our Team</a>
-        <a href="{{route('front.product')}}" class="text-cp-light-grey hover:text-white transition-all duration-300">Projects</a>
-        <a href="{{route('front.appointment')}}" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact</a>
-      </div>
-
-      <!-- Useful Links -->
-      <div class="flex flex-col sm:w-[200px] gap-3 sm:col-span-2 lg:col-span-1">
-        <p class="font-bold text-lg text-white">Useful Links</p>
-        <a href="privacy-policy.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Privacy & Policy</a>
-        <a href="terms-conditions.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms & Conditions</a>
-        <a href="{{route('front.appointment')}}" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact Us</a>
-      </div>
-
     </div>
 
   </div>
 
-  <!-- Background Text -->
-  <div class="absolute bottom-0 w-full pointer-events-none">
-    <p class="font-extrabold text-[70px] sm:text-[110px] lg:text-[250px] leading-none lg:leading-[375px] text-center text-white opacity-5">
+  <!-- Background Watermark -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none">
+    <p class="font-extrabold text-[90px] sm:text-[150px] lg:text-[260px] leading-none text-white/[0.03]">
       EDBS
     </p>
   </div>
 
-  <div class="text-center text-xs sm:text-sm text-gray-500">
-    <p class="text-center text-[11px] text-gray-400/50 mt-3 transition hover:text-gray-400">
-      © 2026 PT. Etika Dharma Bangun Sarana <br>
+  <!-- Divider -->
+  <div class="w-full h-px bg-white/10 my-10"></div>
+  <!-- Bottom -->
+  <div class="flex flex-col items-center justify-center gap-2 text-center">
+    <p class="text-[11px] sm:text-xs text-white/35">
+      © 2026 PT. Etika Dharma Bangun Sarana
     </p>
-    <p class="text-center text-xs sm:text-sm text-gray-500">
+
+    <p class="text-[10px] sm:text-xs text-white/20 hover:text-white/40 transition-all duration-300">
       Website developed by Kurniawan Rasyidi
     </p>
   </div>
 
-
 </footer>
+
 <div id="video-modal" tabindex="-1" aria-hidden="true"
   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 px-4 py-6">
 
