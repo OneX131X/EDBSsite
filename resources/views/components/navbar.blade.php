@@ -1,8 +1,7 @@
 <nav id="navbar"
-    class="fixed top-0 left-1/2 -translate-x-1/2 w-[100%] max-w-[100%] bg-white  shadow-[0_6px_20px_0_#312ECB33] z-50 transition-all duration-500 ease-in-out2">
+    class="fixed top-0 left-1/2 -translate-x-1/2 w-[100%] max-w-[100%] bg-white shadow-[0_6px_20px_0_#312ECB33] z-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-xl bg-white/80 ">
 
-    <!-- <div class="flex items-center justify-between px-4 sm:px-6 py-4"> -->
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+    <div id="navbar-inner" class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2 sm:py-4">
 
         <!-- Logo -->
          <a href="{{route('front.index')}}">
@@ -102,7 +101,7 @@
 
         <!-- Mobile Button -->
         <button id="menu-btn"
-            class="lg:hidden w-14 h-14 flex items-center justify-center relative">
+            class="lg:hidden w-10 h-4 sm:w-14 sm:h-14 flex items-center justify-center relative">
 
             <div class="relative w-6 h-6">
 

@@ -88,6 +88,56 @@
 
   @stack('before-scripts')
 
+  <!-- Navbar Animation -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    const navbarInner = document.getElementById('navbar-inner');
+
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+
+      const currentScroll = window.pageYOffset;
+
+      // SCROLL DOWN
+      if (currentScroll > lastScroll && currentScroll > 120) {
+
+        navbar.classList.add(
+          '-translate-y-full',
+          'opacity-0',
+          'scale-[0.98]'
+        );
+
+        navbarInner.classList.remove('py-4');
+        navbarInner.classList.add('py-2');
+
+      }
+
+      // SCROLL UP
+      else {
+
+        navbar.classList.remove(
+          '-translate-y-full',
+          'opacity-0',
+          'scale-[0.98]'
+        );
+
+        navbarInner.classList.remove('py-2');
+        navbarInner.classList.add('py-4');
+
+      }
+
+      lastScroll = currentScroll;
+
+    });
+  </script>
+
+  <!-- Locomotive Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+  <script>
+    const locomotiveScroll = new LocomotiveScroll();
+  </script>
+
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -210,35 +260,6 @@
         });
       });
     }
-  </script>
-
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-
-  <!-- ScrollTrigger -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-  <!-- Lenis Smooth Scroll -->
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-
-  <script>
-    // LENIS SMOOTH SCROLL
-    const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      smoothTouch: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  </script>
-
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
   </script>
 
   <script>

@@ -67,10 +67,12 @@
                  lg:max-w-[56%]"
           data-aos="fade-up"
           data-aos-delay="100">
-          {{$hero->heading}}
+          <div data-scroll data-scroll-speed="0.05">
+            {{$hero->heading}}
+          </div>
         </h1>
 
-        <p
+        <div
           class="text-sm sm:text-base text-cp-light-grey
                  leading-[24px]
                  max-w-full
@@ -78,8 +80,10 @@
                  lg:max-w-[50%]"
           data-aos="fade-up"
           data-aos-delay="200">
-          {{$hero->subheading}}
-        </p>
+          <p data-scroll data-scroll-speed="0.08">
+            {{$hero->subheading}}
+          </p>
+        </div>
       </div>
 
       <!-- Buttons -->
@@ -105,21 +109,21 @@
           <button
             class="bg-cp-black px-4 py-4
                    flex-1 sm:flex-none rounded-lg
-                   font-bold text-white
+                   font-bold text-[#d9d9e4]
                    text-xs sm:text-base
                    flex items-center justify-center gap-[10px]
                    transition-all duration-300
-                   hover:shadow-[0_12px_30px_0_#312ECB66]
-                   hover:-translate-y-1 bg-transparent border border-[#0B0B45] text-[#0B0B45]"
+                   hover:shadow-[0_12px_30px_0_#312ECB66] hover:border-[#312ECB]
+                   hover:-translate-y-1 bg-transparent border border-[#d9d9e4] hover:text-[#312ECB]"
             onclick="{modal.show()}">
 
             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#080735" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
                 <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
                 <circle cx="12" cy="12" r="10" />
               </svg>
             </div>
-            <span class="text-cp-black">Company Profile</span>
+            <span>Company Profile</span>
           </button>
         </div>
       </div>
@@ -852,7 +856,7 @@
 
 <footer class="bg-cp-black w-full relative overflow-hidden mt-20 border-t border-white/10">
 
-  <div class="container max-w-[1130px] mx-auto px-4 sm:px-6 pt-16 lg:pt-24 pb-14 lg:pb-24 relative z-10">
+  <div class="container max-w-[1130px] mx-auto px-4 sm:px-6 pt-16 lg:pt-24 pb-14 lg:pb-24 relative">
 
     <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-14 lg:gap-20">
 
