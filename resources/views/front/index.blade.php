@@ -4,7 +4,7 @@
 
 <div id="header"
   class="bg-[#F6F7FA] relative overflow-hidden
-         pt-20 sm:pt-28 lg:pt-14">
+         lg:h-screen flex items-center pt-20 sm:pt-28 lg:pt-14 pb-10 sm:pb-14 lg:pb-20">
 
   @forelse($hero_section as $hero)
 
@@ -12,7 +12,7 @@
 
   <div
     class="container max-w-[1130px] mx-auto
-           relative z-10
+           relative
            px-4 lg:px-0
            pt-0 lg:pt-10">
 
@@ -21,7 +21,7 @@
     <!-- HERO -->
     <div id="Hero"
       class="relative flex flex-col
-             gap-6 sm:gap-8 lg:gap-[30px]
+             gap-6 sm:gap-8 lg:gap-[40px]
              mt-10 sm:mt-14 lg:mt-20
              pb-4 sm:pb-14 lg:pb-20">
 
@@ -54,7 +54,7 @@
 
       <!-- Heading + Subheading -->
       <div
-        class="flex flex-col gap-3 sm:gap-4
+        class="flex flex-col gap-5 sm:gap-4
                max-w-full
                sm:max-w-[85%]
                lg:max-w-full">
@@ -63,11 +63,11 @@
           class="font-extrabold
                  text-[32px] leading-[40px]
                  sm:text-[42px] sm:leading-[50px]
-                 lg:text-[56px] lg:leading-[65px]
+                 lg:text-[56px] lg:leading-[80px]
                  lg:max-w-[56%]"
           data-aos="fade-up"
           data-aos-delay="100">
-          <div data-scroll data-scroll-speed="0.05">
+          <div data-scroll data-scroll-speed="-0.05">
             {{$hero->heading}}
           </div>
         </h1>
@@ -80,7 +80,7 @@
                  lg:max-w-[50%]"
           data-aos="fade-up"
           data-aos-delay="200">
-          <p data-scroll data-scroll-speed="0.08">
+          <p data-scroll data-scroll-speed="-0.08">
             {{$hero->subheading}}
           </p>
         </div>
@@ -90,7 +90,8 @@
       <div id="hero-buttons"
         class="flex flex-row justify-center lg:justify-start items-center
          gap-5 sm:gap-4
-         w-full sm:w-full">
+         w-full sm:w-full"
+         data-scroll data-scroll-speed="-0.08">
 
         <div data-aos="zoom-in" data-aos-delay="300">
           <a href=""
@@ -107,14 +108,14 @@
 
         <div data-aos="zoom-in" data-aos-delay="400">
           <button
-            class="bg-cp-black px-4 py-4
+            class="bg-cp-black px-4 py-4 backdrop-blur-xl bg-white/80
                    flex-1 sm:flex-none rounded-lg
-                   font-bold text-[#d9d9e4]
+                   font-bold text-[#9897df]
                    text-xs sm:text-base
                    flex items-center justify-center gap-[10px]
                    transition-all duration-300
-                   hover:shadow-[0_12px_30px_0_#312ECB66] hover:border-[#312ECB]
-                   hover:-translate-y-1 bg-transparent border border-[#d9d9e4] hover:text-[#312ECB]"
+                   hover:shadow-[0_0px_30px_0_#312ECB66] hover:border-[#312ECB]
+                   bg-transparent border border-[#9897df] hover:text-[#312ECB]"
             onclick="{modal.show()}">
 
             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
@@ -148,9 +149,11 @@
 
   <!-- DESKTOP BANNER -->
   <div
+    data-scroll
+    data-scroll-speed="-0.3"
     class="hidden lg:block
            absolute w-[43%] h-full
-           top-0 right-0 overflow-hidden z-0">
+           top-0 right-0 overflow-hidden">
 
     <img
       src="{{Storage::url($hero->banner)}}"
@@ -303,7 +306,7 @@
   </div>
 </div>
 
-<div id="OurPrinciples" class="container max-w-[1130px] mx-auto px-4 lg:px-0 flex flex-col gap-[30px] mt-16 lg:mt-28">
+<div id="OurPrinciples" class="container max-w-[90%] mx-auto px-4 lg:px-0 flex flex-col gap-[30px] mt-16 lg:mt-28">
 
   <!-- Heading -->
   <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
@@ -326,42 +329,40 @@
   </div>
 
   <!-- Cards -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] lg:gap-[30px]">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] lg:gap-[40px]">
 
     @forelse($principles as $principle)
-    <div
-      class="card w-full flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300"
-      data-aos="fade-up"
-      data-aos-delay="{{ ($loop->index % 3) * 150 }}">
-
-      <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-        <img src="{{Storage::url($principle->thumbnail)}}"
-          class="object-cover object-center w-full h-full"
-          alt="thumbnails">
-      </div>
-
-      <div class="flex flex-col px-[24px] pb-[24px] lg:px-[30px] lg:pb-[30px] gap-5">
-
-        <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-          <img src="{{Storage::url($principle->icon)}}"
-            class="w-full h-full object-contain"
-            alt="icon">
+    <div data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 150 }}">
+      <div class="card w-full lg:h-[500px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
+        <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
+          <img src="{{Storage::url($principle->thumbnail)}}"
+            class="object-cover object-center w-full h-full"
+            alt="thumbnails">
         </div>
 
-        <div class="flex flex-col gap-1">
-          <p class="title font-bold text-xl leading-[30px]">
-            {{$principle->name}}
-          </p>
+        <div class="flex flex-col px-[24px] pb-[24px] lg:px-[30px] lg:pb-[30px] gap-5">
 
-          <p class="leading-[28px] lg:leading-[30px] text-cp-light-grey text-sm sm:text-base">
-            {{$principle->subtitle}}
-          </p>
+          <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
+            <img src="{{Storage::url($principle->icon)}}"
+              class="w-full h-full object-contain"
+              alt="icon">
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <p class="title font-bold text-xl leading-[30px]">
+              {{$principle->name}}
+            </p>
+
+            <p class="leading-[28px] lg:leading-[30px] text-cp-light-grey text-sm sm:text-base">
+              {{$principle->subtitle}}
+            </p>
+          </div>
+
+          <a href="" class="font-semibold text-cp-dark-blue">
+            Learn More
+          </a>
+
         </div>
-
-        <a href="" class="font-semibold text-cp-dark-blue">
-          Learn More
-        </a>
-
       </div>
     </div>
     @empty
@@ -418,7 +419,7 @@
 
   @forelse($products as $product)
   <div
-    class="product flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[70px] lg:gap-[160px] even:lg:flex-row-reverse">
+    class="product flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[70px] lg:gap-[100px] even:lg:flex-row-reverse">
 
     <!-- Image -->
     <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden product-image">
@@ -428,7 +429,7 @@
     </div>
 
     <!-- Content -->
-    <div class="flex flex-col gap-[24px] lg:gap-[30px] py-0 lg:py-[50px] h-fit max-w-[500px] w-full text-center lg:text-left">
+    <div class="flex flex-col gap-[24px] lg:gap-[30px] py-0 lg:py-[50px] h-fit max-w-[620px] w-full text-center lg:text-left">
 
       <p class="badge w-fit mx-auto lg:mx-0 bg-cp-pale-blue text-cp-light-blue px-[16px] py-[8px] rounded-full uppercase font-bold text-sm">
         {{$product->tagline}}
@@ -436,7 +437,7 @@
 
       <div class="flex flex-col gap-[10px]">
 
-        <h2 class="font-bold text-3xl sm:text-4xl leading-tight lg:leading-[45px]">
+        <h2 class="font-bold text-3xl sm:text-4xl lg:text-[3rem] leading-tight lg:leading-[55px]">
           {{$product->name}}
         </h2>
 
@@ -457,11 +458,11 @@
   @empty
   <p>Belum ada data terbaru</p>
   @endforelse
-
 </div>
+
 <div id="Teams" class="bg-[#F6F7FA] w-full py-16 lg:py-20 px-4 lg:px-[10px] mt-16 lg:mt-28">
 
-  <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
+  <div class="container max-w-[95%] mx-auto flex flex-col gap-[30px] items-center">
 
     <!-- Heading -->
     <div class="flex flex-col gap-[14px] items-center text-center">
@@ -478,7 +479,7 @@
     </div>
 
     <!-- Cards -->
-    <div class="teams-card-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-[30px] justify-center w-full">
+    <div class="teams-card-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-4 sm:gap-[30px] justify-center w-full">
 
       @forelse($teams as $team)
 
@@ -487,7 +488,7 @@
         data-aos="fade-up"
         data-aos-delay="{{ min($loop->iteration * 100, 400) }}">
 
-        <div class="card bg-white flex flex-col min-h-[230px] lg:min-h-[320px] justify-center items-center p-4 lg:p-[30px] gap-4 lg:gap-[30px] rounded-[20px] border border-white transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue hover:-translate-y-1">
+        <div class="card bg-white flex flex-col h-[230px] lg:h-[300px] items-center p-4 lg:p-[10px] gap-4 lg:gap-[10px] rounded-[20px] transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue border">
 
           <!-- Avatar -->
           <div class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
@@ -501,7 +502,7 @@
           </div>
 
           <!-- Name -->
-          <div class="flex flex-col gap-1 text-center">
+          <div class="flex flex-col gap-1 text-center w-full items-bottom mt-auto">
             <p class="font-bold text-base lg:text-xl leading-tight">
               {{$team->name}}
             </p>
@@ -511,11 +512,11 @@
           </div>
 
           <!-- Location -->
-          <div class="flex items-center justify-center gap-2">
-            <div class="w-4 h-4 lg:w-6 lg:h-6 flex shrink-0">
+          <div class="flex items-center justify-center gap-1 lg:gap-1 w-full items-bottom mt-auto">
+            <div class="w-4 h-4 lg:w-5 lg:h-6 flex shrink-0">
               <img src="{{asset('assets/icons/global.svg')}}" alt="icon">
             </div>
-            <p class="text-cp-dark-blue font-semibold text-xs lg:text-base text-center leading-tight">
+            <p class="text-cp-dark-blue font-semibold text-xs lg:text-xs text-center leading-tight">
               {{$team->location}}
             </p>
           </div>
@@ -534,7 +535,7 @@
         data-aos="zoom-in"
         data-aos-delay="500">
 
-        <div class="card bg-white flex flex-col min-h-[230px] lg:min-h-[320px] justify-center items-center p-4 lg:p-[30px] gap-4 lg:gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-red transition-all duration-300">
+        <div class="card bg-white flex flex-col min-h-[230px] lg:min-h-[300px] justify-center items-center p-4 lg:p-[30px] gap-4 lg:gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-red transition-all duration-300  hover:-translate-y-1">
 
           <div class="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex shrink-0">
             <img src="{{asset('assets/icons/profile-2user.svg')}}" alt="icon">
@@ -782,7 +783,7 @@
               What services does EDBS provide?
             </span>
             <div class="arrow w-8 h-8 sm:w-9 sm:h-9 flex shrink-0">
-              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300" alt="icon">
+              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300 hover:-translate-y-1" alt="icon">
             </div>
           </button>
 
@@ -800,7 +801,7 @@
               Can you handle custom projects?
             </span>
             <div class="arrow w-8 h-8 sm:w-9 sm:h-9 flex shrink-0">
-              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300" alt="icon">
+              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300 hover:-translate-y-1" alt="icon">
             </div>
           </button>
 
@@ -818,7 +819,7 @@
               How do you ensure quality and safety?
             </span>
             <div class="arrow w-8 h-8 sm:w-9 sm:h-9 flex shrink-0">
-              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300" alt="icon">
+              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300 hover:-translate-y-1" alt="icon">
             </div>
           </button>
 
@@ -836,7 +837,7 @@
               How can I request a quotation?
             </span>
             <div class="arrow w-8 h-8 sm:w-9 sm:h-9 flex shrink-0">
-              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300" alt="icon">
+              <img src="{{asset('assets/icons/arrow-circle-down.svg')}}" class="transition-all duration-300 hover:-translate-y-1" alt="icon">
             </div>
           </button>
 
@@ -876,7 +877,7 @@
           <div class="flex flex-col leading-tight">
             <p
               id="CompanyName"
-              class="font-extrabold text-xl text-white">
+              class="font-extrabold text-xl text-white text-left">
               EDBS
             </p>
 
@@ -949,7 +950,7 @@
         <div class="flex flex-col gap-4">
 
           <a href="{{route('front.index')}}"
-            class="group relative h-6 overflow-hidden inline-flex">
+            class="group relative h-6 overflow-hidden lg:inline-flex">
             <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
               <span class="h-6 text-white/60">
                 Home
@@ -961,7 +962,7 @@
           </a>
 
           <a href="{{route('front.product')}}"
-            class="group relative h-6 overflow-hidden inline-flex">
+            class="group relative h-6 overflow-hidden lg:inline-flex">
             <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
               <span class="h-6 text-white/60">
                 Projects
@@ -973,7 +974,7 @@
           </a>
 
           <a href="{{route('front.team')}}"
-            class="group relative h-6 overflow-hidden inline-flex">
+            class="group relative h-6 overflow-hidden lg:inline-flex">
             <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
               <span class="h-6 text-white/60">
                 Company
@@ -985,7 +986,7 @@
           </a>
 
           <a href="{{route('front.about')}}"
-            class="group relative h-6 overflow-hidden inline-flex">
+            class="group relative h-6 overflow-hidden lg:inline-flex">
             <span class="flex flex-col transition-all duration-300 ease-out group-hover:-translate-y-6">
               <span class="h-6 text-white/60">
                 About Us
@@ -1033,10 +1034,11 @@
     </p>
   </div>
 
-  <!-- Divider -->
-  <div class="w-full h-px bg-white/10 my-10"></div>
   <!-- Bottom -->
   <div class="flex flex-col items-center justify-center gap-2 text-center">
+    <!-- Divider -->
+    <div class="container w-[80%] h-px bg-white/10 my-10"></div>
+    
     <p class="text-[11px] sm:text-xs text-white/35">
       © 2026 PT. Etika Dharma Bangun Sarana
     </p>
@@ -1098,7 +1100,7 @@
 </div>
 
 <button id="toTop"
-  class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 hidden w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-cp-red border border-gray-200 shadow-xl z-50 hover:-translate-y-1 hover:scale-110 transition-all duration-300 flex items-center justify-center">
+  class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 hidden w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-cp-red border border-gray-200 shadow-xl z-50 hover:-translate-y-1 hover:scale-110 transition-all duration-300 flex items-center justify-center backdrop-blur-lg bg-white/80">
 
   <svg xmlns="http://www.w3.org/2000/svg"
     class="w-5 h-5 sm:w-6 sm:h-6"

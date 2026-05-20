@@ -1,6 +1,6 @@
 <nav id="navbar"
-    class="fixed top-0 left-1/2 -translate-x-1/2 w-[100%] max-w-[100%] bg-white shadow-[0_6px_20px_0_#312ECB33] z-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] backdrop-blur-xl bg-white/80 ">
-
+    class="fixed top-0 left-1/2 -translate-x-1/2 w-[100%] max-w-[100%] bg-white z-10 transition-all duration-700 bg-white backdrop-blur-2xl border border-cp-dark/40">
+    <!-- ease-[cubic-bezier(0.22,1,0.36,1)] -->
     <div id="navbar-inner" class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2 sm:py-4">
 
         <!-- Logo -->

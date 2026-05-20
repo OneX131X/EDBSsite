@@ -103,9 +103,7 @@
       if (currentScroll > lastScroll && currentScroll > 120) {
 
         navbar.classList.add(
-          '-translate-y-full',
-          'opacity-0',
-          'scale-[0.98]'
+          '-translate-y-full'
         );
 
         navbarInner.classList.remove('py-4');
@@ -117,9 +115,7 @@
       else {
 
         navbar.classList.remove(
-          '-translate-y-full',
-          'opacity-0',
-          'scale-[0.98]'
+          '-translate-y-full'
         );
 
         navbarInner.classList.remove('py-2');
@@ -141,12 +137,8 @@
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+  <!-- AOS Initialization -->
   <script>
-    /*
-    |--------------------------------------------------------------------------
-    | AOS Initialization
-    |--------------------------------------------------------------------------
-    */
     AOS.init({
       duration: 800,
       easing: 'ease-out-cubic',
@@ -262,6 +254,7 @@
     }
   </script>
 
+  <!-- Product Image Animation -->
   <script>
     gsap.utils.toArray(".product-image").forEach((img) => {
 
