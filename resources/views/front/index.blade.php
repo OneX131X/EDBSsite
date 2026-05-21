@@ -91,7 +91,7 @@
         class="flex flex-row justify-center lg:justify-start items-center
          gap-5 sm:gap-4
          w-full sm:w-full"
-         data-scroll data-scroll-speed="-0.08">
+        data-scroll data-scroll-speed="-0.08">
 
         <div data-aos="zoom-in" data-aos-delay="300">
           <a href=""
@@ -418,8 +418,13 @@
 <div id="Products" class="max-w-screen mx-auto px-4 lg:px-0 flex flex-col gap-14 lg:gap-20 mt-16 lg:mt-28">
 
   @forelse($products as $product)
-  <div
-    class="product flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[70px] lg:gap-[100px] even:lg:flex-row-reverse">
+  <div class="product flex flex-col lg:flex-row
+            items-center
+            gap-[70px] lg:gap-[70px]
+            even:lg:flex-row-reverse
+            lg:w-fit
+            lg:odd:mr-auto lg:odd:ml-20
+            lg:even:ml-auto lg:even:mr-20">
 
     <!-- Image -->
     <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden product-image">
@@ -448,7 +453,7 @@
       </div>
 
       <a href="{{route('front.appointment')}}"
-        class="bg-cp-dark-blue px-[20px] py-[14px] w-full sm:w-fit mx-auto lg:mx-0 text-center rounded-xl font-bold text-white transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1 inline-block">
+        class="bg-cp-dark-blue px-[20px] py-[14px] w-[50%] sm:w-fit mx-auto lg:mx-0 text-center rounded-xl font-bold text-white transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1 inline-block">
         Book Appointment
       </a>
 
@@ -488,7 +493,7 @@
         data-aos="fade-up"
         data-aos-delay="{{ min($loop->iteration * 100, 400) }}">
 
-        <div class="card bg-white flex flex-col h-[230px] lg:h-[300px] items-center p-4 lg:p-[10px] gap-4 lg:gap-[10px] rounded-[20px] transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue border">
+        <div class="card bg-white flex flex-col h-[250px] lg:h-[300px] items-center p-4 lg:p-[10px] gap-4 lg:gap-[10px] rounded-[20px] transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue border pt-6 lg:pt-8">
 
           <!-- Avatar -->
           <div class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
@@ -535,7 +540,7 @@
         data-aos="zoom-in"
         data-aos-delay="500">
 
-        <div class="card bg-white flex flex-col min-h-[230px] lg:min-h-[300px] justify-center items-center p-4 lg:p-[30px] gap-4 lg:gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-red transition-all duration-300  hover:-translate-y-1">
+        <div class="card bg-white flex flex-col min-h-[250px] lg:min-h-[300px] justify-center items-center p-4 lg:p-[30px] gap-4 lg:gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-red transition-all duration-300  hover:-translate-y-1">
 
           <div class="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex shrink-0">
             <img src="{{asset('assets/icons/profile-2user.svg')}}" alt="icon">
@@ -559,6 +564,7 @@
   </div>
 
 </div>
+
 <div id="Testimonials" class="w-full flex flex-col gap-[40px] lg:gap-[50px] items-center mt-16 lg:mt-28">
 
   <!-- Heading -->
@@ -588,9 +594,9 @@
 
           <!-- Logo -->
           <div class="h-8 lg:h-9 overflow-hidden flex justify-center lg:justify-start">
-            <img src="{{Storage::url($testimonial->client->logo)}}"
+            <!-- <img src="{{Storage::url($testimonial->client->logo)}}"
               class="object-contain h-full"
-              alt="icon">
+              alt="icon"> -->
           </div>
 
           <!-- Quote -->
@@ -659,9 +665,9 @@
     @endforelse
 
   </div>
-
 </div>
-<div id="Strengths" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20 lg:mt-32 px-4 sm:px-6">
+
+<div id="Strengths" class="container w-full mx-auto flex flex-col gap-[30px] mt-20 lg:mt-32 px-4 sm:px-6">
 
   <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
 
@@ -677,17 +683,33 @@
     </div>
 
     <a href="{{route('front.appointment')}}"
-      class="bg-cp-black px-5 py-4 w-full sm:w-fit text-center rounded-xl font-bold text-white transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1 inline-block">
+      class="bg-cp-black px-5 py-4 w-[50%] sm:w-fit text-center rounded-xl font-bold text-white transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1 inline-block mx-auto sm:mx-0">
       Contact Us
     </a>
 
   </div>
 
-  <div class="awards-card-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-[30px] justify-center">
+  <!-- Awards Card Container -->
+  <!-- <div data-aos="fade-up" data-aos-delay="50"> -->
+  <div class="awards-card-container 
+              grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 
+              gap-5 lg:gap-[60px] 
+              mt-10 lg:mt-16 
+              items-start">
 
     <!-- <div data-aos="fade-up" data-aos-delay="50"> -->
-    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-      <div class="w-[55px] h-[55px] flex shrink-0">
+    <div class="card 
+              bg-white flex flex-col h-full 
+              p-6 lg:p-[30px] 
+              gap-5 lg:gap-[30px] 
+              rounded-[20px] 
+              border border-[#E8EAF2]
+              hover:border-cp-dark-blue 
+              hover:shadow-xl
+              transition-all duration-500
+              hover:-translate-y-2
+              lg:-translate-y-5">
+      <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
         <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
       <hr class="border-[#E8EAF2]">
@@ -702,8 +724,18 @@
     <!-- </div> -->
 
     <!-- <div data-aos="fade-up" data-aos-delay="100"> -->
-    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-      <div class="w-[55px] h-[55px] flex shrink-0">
+    <div class="card 
+              bg-white flex flex-col h-full 
+              p-6 lg:p-[30px] 
+              gap-5 lg:gap-[30px] 
+              rounded-[20px] 
+              border border-[#E8EAF2]
+              hover:border-cp-dark-blue 
+              hover:shadow-xl
+              transition-all duration-500
+              hover:translate-y-2
+              lg:translate-y-5">
+      <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
         <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
       <hr class="border-[#E8EAF2]">
@@ -718,8 +750,18 @@
     <!-- </div> -->
 
     <!-- <div data-aos="fade-up" data-aos-delay="150"> -->
-    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-      <div class="w-[55px] h-[55px] flex shrink-0">
+    <div class="card 
+              bg-white flex flex-col h-full 
+              p-6 lg:p-[30px] 
+              gap-5 lg:gap-[30px] 
+              rounded-[20px] 
+              border border-[#E8EAF2]
+              hover:border-cp-dark-blue 
+              hover:shadow-xl
+              transition-all duration-500
+              hover:-translate-y-2
+              lg:-translate-y-5">
+      <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
         <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
       <hr class="border-[#E8EAF2]">
@@ -734,8 +776,18 @@
     <!-- </div> -->
 
     <!-- <div data-aos="fade-up" data-aos-delay="200"> -->
-    <div class="card bg-white flex flex-col h-full p-6 lg:p-[30px] gap-5 lg:gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue hover:shadow-md transition-all duration-300">
-      <div class="w-[55px] h-[55px] flex shrink-0">
+    <div class="card 
+              bg-white flex flex-col h-full 
+              p-6 lg:p-[30px] 
+              gap-5 lg:gap-[30px] 
+              rounded-[20px] 
+              border border-[#E8EAF2]
+              hover:border-cp-dark-blue 
+              hover:shadow-xl
+              transition-all duration-500
+              hover:translate-y-2
+              lg:translate-y-5">
+      <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
         <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
       </div>
       <hr class="border-[#E8EAF2]">
@@ -750,15 +802,16 @@
     <!-- </div> -->
 
   </div>
+  <!-- </div> -->
 </div>
 <div id="FAQ" class="bg-[#F6F7FA] w-full py-16 lg:py-20 px-4 sm:px-6 mt-20 -mb-20 lg:-mb-28">
 
-  <div class="container max-w-[1000px] mx-auto">
+  <div class="container max-w-[80%] mx-auto">
 
-    <div class="flex flex-col lg:flex-row gap-10 lg:gap-[70px] items-start lg:items-center">
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-[70px] items-center justify-center">
 
       <!-- Left Content -->
-      <div class="flex flex-col gap-6 lg:gap-[30px] w-full lg:w-auto text-center lg:text-left">
+      <div class="flex flex-col gap-6 lg:gap-[30px] lg:w-[30%] lg:text-left items-center lg:items-start">
 
         <div class="flex flex-col gap-[10px]">
           <h2 class="font-bold text-2xl sm:text-3xl lg:text-4xl leading-snug lg:leading-[45px]">
@@ -767,14 +820,14 @@
         </div>
 
         <a href="{{route('front.appointment')}}"
-          class="px-5 py-4 bg-cp-black rounded-xl text-white w-full sm:w-fit mx-auto lg:mx-0 font-bold transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1 inline-block text-center">
+          class="px-5 py-4 bg-cp-black rounded-xl text-white w-[50%] sm:w-fit mx-auto lg:mx-0 font-bold transition-all duration-300 hover:shadow-[0_12px_30px_0_#312ECB66] hover:-translate-y-1 inline-block text-center mx-auto sm:mx-0">
           Contact Us
         </a>
 
       </div>
 
       <!-- Right FAQ -->
-      <div class="flex flex-col gap-4 lg:gap-[30px] w-full lg:w-[603px] shrink-0">
+      <div class="flex flex-col gap-4 lg:gap-[30px] w-full lg:w-[600px] shrink-0">
 
         <!-- FAQ 1 -->
         <div class="flex flex-col p-4 sm:p-5 rounded-2xl bg-white w-full">
@@ -857,9 +910,9 @@
 
 <footer class="bg-cp-black w-full relative overflow-hidden mt-20 border-t border-white/10">
 
-  <div class="container max-w-[1130px] mx-auto px-4 sm:px-6 pt-16 lg:pt-24 pb-14 lg:pb-24 relative">
+  <div class="container max-w-screen mx-auto px-4 sm:px-6 pt-16 lg:pt-24 pb-14 lg:pb-24 relative">
 
-    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-14 lg:gap-20">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_0.4fr_1fr] gap-14 lg:gap-20">
 
       <!-- LEFT -->
       <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -1038,7 +1091,7 @@
   <div class="flex flex-col items-center justify-center gap-2 text-center">
     <!-- Divider -->
     <div class="container w-[80%] h-px bg-white/10 my-10"></div>
-    
+
     <p class="text-[11px] sm:text-xs text-white/35">
       © 2026 PT. Etika Dharma Bangun Sarana
     </p>

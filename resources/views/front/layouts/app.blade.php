@@ -255,6 +255,8 @@
   </script>
 
   <!-- Product Image Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
   <script>
     gsap.utils.toArray(".product-image").forEach((img) => {
 
@@ -264,7 +266,7 @@
           start: "top 85%",
         },
 
-        scale: 1.15,
+        scale: 1.05,
         opacity: 0,
         duration: 1.4,
         ease: "power3.out"
