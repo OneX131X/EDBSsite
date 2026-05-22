@@ -1,5 +1,5 @@
 <nav id="navbar"
-    class="fixed top-0 left-1/2 -translate-x-1/2 w-[100%] max-w-[100%] bg-white z-10 transition-all duration-700 bg-white backdrop-blur-2xl border border-cp-dark/40">
+    class="fixed top-0 left-1/2 -translate-x-1/2 w-[100%] max-w-[100%] bg-white z-10 transition-all duration-700 bg-white backdrop-blur-2xl border-b border-[#df4846]/50">
     <!-- ease-[cubic-bezier(0.22,1,0.36,1)] -->
     <div id="navbar-inner" class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2 sm:py-4">
 
@@ -95,7 +95,7 @@
 
         <!-- Desktop CTA -->
         <a href="{{route('front.appointment')}}"
-            class="hidden lg:flex bg-cp-dark-blue px-5 py-3 rounded-xl hover:shadow-[0_2px_20px_0_#312ECB66] transition-all duration-300 font-bold text-white">
+            class="hidden lg:flex bg-cp-dark-blue px-5 py-3 rounded-lg hover:shadow-[0_2px_20px_0_#312ECB66] transition-all duration-300 font-bold text-white">
             Get a Quote
         </a>
 
@@ -141,7 +141,7 @@
                 class="font-semibold py-2">About</a>
 
             <a href="{{route('front.appointment')}}"
-                class="mt-2 bg-cp-dark-blue text-white font-bold rounded-xl px-5 py-3 text-center">
+                class="mt-2 bg-cp-dark-blue text-white font-bold rounded-lg px-5 py-3 text-center">
                 Get a Quote
             </a>
 

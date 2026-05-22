@@ -82,7 +82,7 @@
   </style>
 </head>
 
-<body class="font-poppins text-cp-black">
+<body class="font-poppins text-cp-black overflow-x-hidden">
 
   @yield('content')
 
