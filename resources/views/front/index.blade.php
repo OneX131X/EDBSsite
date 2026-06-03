@@ -5,7 +5,7 @@
 <div id="page-content" class="relative z-10 bg-[#FFFFFF] mb-[100vh] lg:mb-[506px] min-h-screen">
   <div id="header"
     class="bg-[#F6F7FA] relative overflow-hidden
-           h-[100vh] flex items-center pt-20 sm:pt-28 lg:pt-14 lg:pb-20">
+           h-[100vh] flex items-center pt-2 sm:pt-28 lg:pt-14 lg:pb-20">
 
     @forelse($hero_section as $hero)
 
@@ -62,7 +62,7 @@
 
           <h1
             class="font-extrabold
-                   text-[42px] leading-[50px]
+                   text-[42px] leading-[48px]
                    sm:text-[42px] sm:leading-[50px]
                    lg:text-[56px] lg:leading-[80px]
                    lg:max-w-[56%]"
@@ -75,7 +75,7 @@
 
           <div
             class="text-sm sm:text-base text-cp-light-grey
-                   leading-[24px]
+                   leading-[22px]
                    max-w-full
                    lg:leading-[30px]
                    lg:max-w-[50%]"
@@ -90,54 +90,56 @@
         <!-- Buttons -->
         <div id="hero-buttons"
           class="flex flex-row justify-center lg:justify-start items-center
-           gap-5 sm:gap-4
-           w-full sm:w-full z-10"
+           gap-4 sm:gap-4
+           w-full sm:w-full"
           data-scroll data-scroll-speed="-0.08">
 
-          <div data-aos="zoom-in" data-aos-delay="300">
-            <a href=""
-              class="bg-cp-dark-blue px-8 py-4
-                     flex-1 sm:flex-none text-center
-                     rounded-lg font-bold text-white
-                     text-sm sm:text-base
-                     transition-all duration-300
-                     hover:shadow-[0_12px_30px_0_#312ECB66]
-                     hover:-translate-y-1 inline-block">
-              View Projects
-            </a>
-          </div>
+          <div class="flex items-center gap-0">
+            <div data-aos="zoom-in" data-aos-delay="300">
+              <a href=""
+                class="bg-cp-dark-blue px-4 py-4
+                       flex-none text-center
+                        font-bold text-white
+                       text-sm sm:text-base
+                       transition-all duration-300
+                       hover:shadow-[0_0_2 q0px_0_#312ECB66]
+                        inline-block">
+                View Projects
+              </a>
+            </div>
 
-          <div data-aos="zoom-in" data-aos-delay="400">
-            <button
-              class="bg-cp-black px-4 py-4 backdrop-blur-xl bg-white/80
-                     flex-1 sm:flex-none rounded-lg
-                     font-bold text-[#9897df]
-                     text-xs sm:text-base
-                     flex items-center justify-center gap-[10px]
-                     transition-all duration-300
-                     hover:shadow-[0_0px_30px_0_#312ECB66] hover:border-[#312ECB]
-                     bg-transparent border border-[#9897df] hover:text-[#312ECB]"
-              onclick="{modal.show()}">
+            <div data-aos="zoom-in" data-aos-delay="400">
+              <button
+                class="bg-cp-black px-2 py-3 backdrop-blur-xl bg-white/80
+                       flex-none
+                       font-bold text-[#9897df]
+                       text-xs sm:text-base
+                       flex items-center justify-center gap-[10px]
+                       transition-all duration-300
+                       hover:shadow-[0_0px_10px_0_#312ECB66] hover:border-[#312ECB]
+                       bg-transparent border border-[#9897df] hover:text-[#312ECB]"
+                onclick="{modal.show()}">
 
-              <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
-                  <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
-                  <circle cx="12" cy="12" r="10" />
-                </svg>
-              </div>
-              <span>Company Profile</span>
-            </button>
+                <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play">
+                    <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
+                    <circle cx="12" cy="12" r="10" />
+                  </svg>
+                </div>
+                <span>Company Profile</span>
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- MOBILE BANNER -->
         <div
-          class="relative w-full h-[200px]
-                 sm:h-[380px]
+          class="relative w-full h-[20vh]
+                 sm:h-[10vh]
                  lg:hidden
                  overflow-hidden rounded-[5px]
                  border border-[blue]
-                 mt-2">
+                 -z-4">
 
           <img
             src="{{Storage::url($hero->banner)}}"
@@ -485,7 +487,7 @@
       </div>
 
       <!-- Cards -->
-      <div class="teams-card-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-[30px] justify-center w-full">
+      <div class="teams-card-container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-[30px] justify-center w-full">
 
         @forelse($teams as $team)
 
@@ -494,7 +496,7 @@
           data-aos="fade-up"
           data-aos-delay="{{ min($loop->iteration * 100, 400) }}">
 
-          <div class="card bg-white flex flex-col h-[250px] lg:h-[300px] items-center p-4 lg:p-[10px] gap-4 lg:gap-[10px] rounded-[20px] transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue border pt-6 lg:pt-8">
+          <div class="card bg-white flex flex-col h-[220px] lg:h-[300px] items-center p-4 lg:p-[10px] gap-4 lg:gap-[10px] rounded-[20px] transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue border pt-6 lg:pt-8">
 
             <!-- Avatar -->
             <div class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
@@ -518,7 +520,7 @@
             </div>
 
             <!-- Location -->
-            <div class="flex items-center justify-center gap-1 lg:gap-1 w-full items-bottom mt-auto">
+            <div class="flex items-center justify-center gap-1 lg:gap-1 w-full items-bottom mt-auto mb-10 lg:mb-2">
               <div class="w-4 h-4 lg:w-5 lg:h-6 flex shrink-0">
                 <img src="{{asset('assets/icons/global.svg')}}" alt="icon">
               </div>
@@ -693,8 +695,8 @@
     <!-- Awards Card Container -->
     <!-- <div data-aos="fade-up" data-aos-delay="50"> -->
     <div class="awards-card-container 
-                grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 
-                gap-5 lg:gap-[60px] 
+                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 
+                gap-2 lg:gap-[60px] 
                 mt-10 lg:mt-16 
                 items-start">
 
@@ -904,9 +906,9 @@
        z-0 bg-cp-black
        w-full h-full lg:h-[515px] overflow-hidden">
 
-  <div class="container max-w-screen mx-auto px-4 sm:px-6 pt-16 lg:pt-24 pb-4 lg:pb-24 relative">
+  <div class="container max-w-screen mx-auto px-3 sm:px-6 pt-10 lg:pt-24 pb-4 lg:pb-24 relative">
 
-    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_0.4fr_1fr] gap-10 lg:gap-20">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_0.4fr_1fr] gap-5 lg:gap-20">
 
       <!-- LEFT -->
       <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -944,7 +946,7 @@
         </p>
 
         <!-- Social -->
-        <div class="flex items-center gap-4 mt-8">
+        <div class="flex items-center gap-4 mt-4">
           <a href="https://www.youtube.com/"
             class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all duration-300">
             <div class="w-5 h-5 flex shrink-0 overflow-hidden">
@@ -989,7 +991,7 @@
       </div>
 
       <!-- QUICK LINKS -->
-      <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left mb-2">
         <p class="font-bold text-lg text-white mb-3 lg:mb-5">
           Quick Links
         </p>
@@ -1076,7 +1078,7 @@
 
   <!-- Background Watermark -->
   <div class="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none">
-    <p class="font-extrabold text-[200px] sm:text-[150px] lg:text-[260px] leading-none text-white/[0.03]">
+    <p class="font-extrabold text-[150px] sm:text-[150px] lg:text-[260px] leading-none text-white/[0.03]">
       EDBS
     </p>
   </div>
