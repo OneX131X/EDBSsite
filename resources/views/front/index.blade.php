@@ -1084,9 +1084,9 @@
   </div>
 
   <!-- Bottom -->
+  <!-- Divider -->
+  <div class="container w-[100%] h-px bg-white/10 mb-8 mt-4"></div>
   <div class="flex flex-col items-center justify-center gap-1 lg:gap-2 text-center">
-    <!-- Divider -->
-    <div class="container w-[80%] h-px bg-white/10 mb-8 mt-4"></div>
 
     <p class="text-[11px] sm:text-xs text-white/35">
       © 2026 PT. Etika Dharma Bangun Sarana

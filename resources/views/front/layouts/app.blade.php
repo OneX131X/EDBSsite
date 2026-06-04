@@ -20,6 +20,21 @@
 
   <!-- Burger Menu Animation -->
   <style>
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      z-index: 9999;
+
+      background: linear-gradient(90deg,
+          #007AFF,
+          #312ECB);
+
+      transition: width 0.08s linear;
+    }
+
     .burger-line {
       position: absolute;
       left: 0;
@@ -83,11 +98,29 @@
 </head>
 
 <body class="font-poppins text-cp-black overflow-x-hidden">
+  <div id="scroll-progress"></div>
 
   @yield('content')
 
   @stack('before-scripts')
 
+  <script>
+    const progressBar = document.getElementById('scroll-progress');
+
+    window.addEventListener('scroll', () => {
+
+      const scrollTop = window.scrollY;
+
+      const docHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const progress = (scrollTop / docHeight) * 100;
+
+      progressBar.style.width = progress + '%';
+
+    });
+  </script>
   <!-- Navbar Animation -->
   <script>
     const navbar = document.getElementById('navbar');

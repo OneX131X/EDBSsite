@@ -12,7 +12,7 @@
 
         <!-- Breadcrumb -->
         <div class="breadcrumb flex flex-wrap items-center justify-center gap-2 sm:gap-[30px] text-sm sm:text-base text-center">
-          <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
+          <a href="{{ route('front.index') }}" class="text-cp-light-grey hover:text-white transition-all duration-300">Home</a>
           <span class="text-cp-light-grey">/</span>
           <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Projects</p>
         </div>
@@ -430,9 +430,9 @@
   </div>
 
   <!-- Bottom -->
+  <!-- Divider -->
+  <div class="container w-[100%] h-px bg-white/10 mb-8 mt-4"></div>
   <div class="flex flex-col items-center justify-center gap-1 lg:gap-2 text-center">
-    <!-- Divider -->
-    <div class="container w-[80%] h-px bg-white/10 mb-8 mt-4"></div>
 
     <p class="text-[11px] sm:text-xs text-white/35">
       © 2026 PT. Etika Dharma Bangun Sarana
