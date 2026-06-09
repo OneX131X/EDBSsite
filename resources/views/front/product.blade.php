@@ -439,7 +439,7 @@
     </p>
 
     <p class="text-[10px] sm:text-xs text-white/20 hover:text-white/40 transition-all duration-300">
-      Website developed by Kurniawan Rasyidi
+      Website developed by Kurniawan Rasyidi [onex131x]
     </p>
   </div>
 

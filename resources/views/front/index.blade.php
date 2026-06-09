@@ -5,7 +5,7 @@
 <div id="page-content" class="relative z-10 bg-[#FFFFFF] mb-[100vh] lg:mb-[506px] min-h-screen">
   <div id="header"
     class="bg-[#F6F7FA] relative overflow-hidden
-           h-[100vh] flex items-center pt-2 sm:pt-28 lg:pt-14 lg:pb-20">
+           h-[100vh] flex items-center pt-5 sm:pt-28 lg:pt-14 lg:pb-20">
 
     @forelse($hero_section as $hero)
 
@@ -183,61 +183,61 @@
 
 
         <div data-aos="fade-up" data-aos-delay="100">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Fortis Primera</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="200">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Fortuna Kontraktor</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="300">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Imanuel Teknik Sentosa</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="400">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Surya Sukses Maju</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="500">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Tunggak Jati</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="600">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Bayanaka Karya</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="700">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. EPKS</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="800">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Duta Bangsa Mandiri</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="900">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">PT. Vava Enviro Utama Fiberglass</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-xs sm:text-sm lg:text-lg text-black font-bold text-center whitespace-nowrap">CV. Alghi Citra Kreasi</span>
           </div>
         </div>
@@ -245,62 +245,62 @@
         <!-- DUPLICATE ITEMS FOR INFINITE LOOP -->
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortis Primera</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Fortuna Kontraktor</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Imanuel Teknik Sentosa</span>
           </div>
         </div>
 
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Surya Sukses Maju</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Tunggak Jati</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Bayanaka Karya</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. EPKS</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Duta Bangsa Mandiri</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">PT. Vava Enviro Utama Fiberglass</span>
           </div>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="1000">
-          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#E8EAF2] rounded-[18px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
+          <div class="logo-card min-h-[20px] w-fit shrink-0 flex items-center justify-center border border-[#FFFFFF] rounded-[8px] px-3 sm:px-4 py-3 bg-white hover:border-cp-red transition-all duration-300 hover:shadow-[0_10px_30px_0_#D1D4DF80]">
             <span class="text-sm lg:text-lg text-black font-bold whitespace-nowrap">CV. Alghi Citra Kreasi</span>
           </div>
         </div>
@@ -803,7 +803,7 @@
       <div class="flex flex-col lg:flex-row gap-10 lg:gap-[70px] items-center justify-center">
 
         <!-- Left Content -->
-        <div class="flex flex-col gap-6 lg:gap-[30px] lg:w-[30%] lg:text-left items-center lg:items-start">
+        <div class="flex flex-col gap-6 lg:gap-[30px] lg:w-[30%] text-center lg:text-left items-center lg:items-start">
 
           <div class="flex flex-col gap-[10px]">
             <h2 class="font-bold text-2xl sm:text-3xl lg:text-4xl leading-snug lg:leading-[45px]">
@@ -819,7 +819,7 @@
         </div>
 
         <!-- Right FAQ -->
-        <div class="flex flex-col gap-4 lg:gap-[30px] w-full lg:w-[600px] shrink-0">
+        <div class="flex flex-col gap-4 lg:gap-[30px] w-[92vw] lg:w-[600px] shrink-0">
 
           <!-- FAQ 1 -->
           <div class="flex flex-col p-4 sm:p-5 rounded-2xl bg-white w-full">
@@ -1093,7 +1093,7 @@
     </p>
 
     <p class="text-[10px] sm:text-xs text-white/20 hover:text-white/40 transition-all duration-300">
-      Website developed by Kurniawan Rasyidi
+      Website developed by Kurniawan Rasyidi [onex131x]
     </p>
   </div>
 

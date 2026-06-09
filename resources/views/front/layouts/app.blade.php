@@ -29,8 +29,8 @@
       z-index: 9999;
 
       background: linear-gradient(90deg,
-          #007AFF,
-          #312ECB);
+          #200b81,
+          #3988ff);
 
       transition: width 0.08s linear;
     }
@@ -104,6 +104,7 @@
 
   @stack('before-scripts')
 
+  <!-- Scroll Progress Bar -->
   <script>
     const progressBar = document.getElementById('scroll-progress');
 
