@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Title -->
+  <title>@yield('title', 'EDBS | PT. Etika Dharma Bangun Sarana')</title>
+
+  <!-- Logo -->
+  <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo/edbsicon.svg') }}">
+
   <!-- Main CSS -->
   <link href="{{ asset('css/output.css') }}" rel="stylesheet">
 
