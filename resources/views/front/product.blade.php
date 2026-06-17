@@ -4,7 +4,7 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <div id="page-content" class="relative z-10 bg-[#FFFFFF] mb-[100vh] lg:mb-[506px] min-h-screen">
-  <div id="header" class="bg-[#F6F7FA] relative pt-10 lg:pt-20">
+  <div id="header" class="bg-[#F6F7FA] relative pt-10 lg:pt-20 border-b border-[#312ECB]">
     <div class="container max-w-[1130px] mx-auto relative pt-6 sm:pt-10 z-10 px-4">
       <x-navbar />
 
@@ -38,7 +38,7 @@
               lg:even:ml-auto lg:even:mr-20">
 
       <!-- Image -->
-      <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden product-image">
+      <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden product-image border border-[#312ECB] rounded-[20px]">
         <img src="{{Storage::url($product->thumbnail)}}"
           class="w-full h-full object-contain"
           alt="thumbnail">
@@ -116,7 +116,7 @@
     </div>
 
   </div>
-  
+
   <div id="Strengths" class="container w-full mx-auto flex flex-col gap-[30px] mt-20 lg:mt-32 px-4 sm:px-6">
 
     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
@@ -243,7 +243,7 @@
     <!-- </div> -->
   </div>
 
-  <div class="w-full py-16 lg:py-2 px-4 sm:px-6 mt-4 relative border-b border-[#df4846]"></div>
+  <div class="w-full py-16 lg:py-10 px-4 sm:px-6 mt-4 relative border-b border-[#df4846]"></div>
 
 </div>
 

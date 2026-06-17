@@ -5,7 +5,7 @@
 <div id="page-content" class="relative z-10 bg-[#FFFFFF] mb-[100vh] lg:mb-[506px] min-h-screen">
   <div id="header"
     class="bg-[#F6F7FA] relative overflow-hidden
-           h-[100vh] flex items-center pt-5 sm:pt-28 lg:pt-14 lg:pb-20">
+           h-[100vh] flex items-center pt-5 sm:pt-28 lg:pt-14 lg:pb-20 border-b border-[#312ECB]">
 
     @forelse($hero_section as $hero)
 
@@ -160,7 +160,7 @@
 
       <img
         src="{{Storage::url($hero->banner)}}"
-        class="object-cover w-full h-full"
+        class="object-cover w-full h-full product-image"
         alt="banner">
 
     </div>
@@ -430,7 +430,7 @@
               lg:even:ml-auto lg:even:mr-20">
 
       <!-- Image -->
-      <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden product-image">
+      <div class="w-full max-w-[470px] h-auto lg:h-[550px] flex shrink-0 overflow-hidden product-image border border-[#312ECB] rounded-[20px]">
         <img src="{{Storage::url($product->thumbnail)}}"
           class="w-full h-full object-contain"
           alt="thumbnail">

@@ -4,7 +4,7 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <div id="page-content" class="relative z-10 bg-[#FFFFFF] mb-[100vh] lg:mb-[506px] min-h-screen">
-  <div id="header" class="bg-[#F6F7FA] relative pt-20">
+  <div id="header" class="bg-[#F6F7FA] relative pt-20 border-b border-[#312ECB]">
 
     <div class="container max-w-[1130px] mx-auto px-4 lg:px-0 relative pt-10 z-10">
 
@@ -51,7 +51,7 @@
               lg:even:ml-auto lg:even:mr-20">
 
       <!-- Image -->
-      <div class="w-full max-w-[470px] h-[320px] sm:h-[420px] lg:h-[550px] flex shrink-0 overflow-hidden">
+      <div class="w-full max-w-[470px] h-[320px] sm:h-[420px] lg:h-[550px] flex shrink-0 overflow-hidden border border-[#312ECB] rounded-[20px] product-image">
 
         <img src="{{Storage::url($about->thumbnail)}}"
           class="w-full h-full object-contain"

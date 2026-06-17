@@ -3,7 +3,7 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <div id="page-content" class="relative z-10 bg-[#FFFFFF] mb-[100vh] lg:mb-[506px] min-h-screen">
-  <div id="header" class="bg-[#F6F7FA] relative h-[420px] sm:h-[520px] lg:h-[670px] -mb-[300px] sm:-mb-[320px] lg:-mb-[490px]">
+  <div id="header" class="bg-[#F6F7FA] relative h-[420px] sm:h-[520px] lg:h-[670px] -mb-[300px] sm:-mb-[320px] lg:-mb-[490px] border-b border-[#312ECB]">
     <div class="container max-w-[1130px] mx-auto relative pt-6 sm:pt-10 px-4 lg:px-0 z-10">
       <x-navbar />
     </div>
@@ -129,7 +129,7 @@
               <img src="assets/icons/building-4-black.svg" alt="icon">
             </div>
             <select name="product_id"
-              class="appearance-none outline-none w-full font-semibold invalid:font-normal px-[10px] -mx-[10px]"
+              class="appearance-none outline-none bg-white w-full font-semibold placeholder:font-normal placeholder:text-cp-black"
               required>
               <option value="" hidden>Choose a project</option>
               @foreach($products as $product)
@@ -142,8 +142,9 @@
         <div class="flex flex-col gap-2 w-full">
           <p class="font-semibold">Budget Available</p>
           <div class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue rounded-xl bg-white transition-all duration-300">
-            <div class="w-[18px] h-[18px] shrink-0">
-              <img src="assets/icons/dollar-square.svg" alt="icon">
+            <div class="w-[18px] h-[18px] shrink-0 font-bold text-cp-black">
+              <!-- <img src="assets/icons/dollar-square.svg" alt="icon"> -->
+               Rp
             </div>
             <input type="number" name="budget"
               class="appearance-none outline-none bg-white w-full font-semibold placeholder:font-normal placeholder:text-cp-black"

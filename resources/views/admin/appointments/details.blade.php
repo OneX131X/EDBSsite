@@ -59,7 +59,7 @@
                         <div class="flex flex-col">
                             <p class="text-slate-500 text-sm">Budget</p>
                             <h3 class="text-indigo-950 text-xl font-bold">
-                                ${{number_format($appointment->budget, 0, ',', '.')}}
+                                Rp {{number_format($appointment->budget, 0, ',', '.')}}
                             </h3>
                         </div>
         

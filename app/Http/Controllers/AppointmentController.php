@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AppointmentController extends Controller
 {
@@ -31,6 +32,18 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
         //
+            DB::transaction(function() use ($request) {
+                $validated = $request->validate([
+                    'name' => 'required|string|max:255',
+                    'email' => 'required|email|max:255',
+                    'phone' => 'required|string|max:20',
+                    'product_id' => 'required|exists:products,id',
+                    'message' => 'nullable|string',
+                ]);
+    
+                Appointment::create($validated);
+            });
+        return redirect()->route('admin.appointments.index');
     }
 
     /**
@@ -64,5 +77,9 @@ class AppointmentController extends Controller
     public function destroy(Appointment $appointment)
     {
         //
+        DB::transaction(function() use ($appointment) {
+            $appointment->delete();
+        });
+        return redirect()->route('admin.appointments.index');
     }
 }

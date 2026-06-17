@@ -3,7 +3,7 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <div id="page-content" class="relative z-10 bg-[#FFFFFF] mb-[100vh] lg:mb-[506px] min-h-screen">
-    <div id="header" class="bg-[#F6F7FA] relative pt-10 lg:pt-20">
+    <div id="header" class="bg-[#F6F7FA] relative pt-10 lg:pt-20 border-b border-[#312ECB]">
         <div class="container max-w-[1130px] mx-auto px-4 sm:px-6 lg:px-0 relative pt-6 sm:pt-10">
             <x-navbar />
 

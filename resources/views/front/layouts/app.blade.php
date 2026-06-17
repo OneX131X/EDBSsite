@@ -130,43 +130,67 @@
   </script>
   <!-- Navbar Animation -->
   <script>
-    const navbar = document.getElementById('navbar');
-    const navbarInner = document.getElementById('navbar-inner');
+  const navbar = document.getElementById('navbar');
+  const navbarInner = document.getElementById('navbar-inner');
 
-    let lastScroll = 0;
+  let lastScroll = 0;
 
-    window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
 
-      const currentScroll = window.pageYOffset;
+    const currentScroll = window.pageYOffset;
 
-      // SCROLL DOWN
-      if (currentScroll > lastScroll && currentScroll > 120) {
+    // SCROLL DOWN
+    if (currentScroll > lastScroll + 10 && currentScroll > 120) {
 
-        navbar.classList.add(
-          '-translate-y-full'
+      navbar.classList.add('-translate-y-full');
+
+      navbarInner.classList.remove('py-4');
+      navbarInner.classList.add('py-2');
+
+      // CLOSE MOBILE MENU IF OPEN
+      if (
+        typeof mobileMenu !== 'undefined' &&
+        mobileMenu.classList.contains('max-h-96')
+      ) {
+
+        mobileMenu.classList.remove(
+          'max-h-96',
+          'opacity-100',
+          'pt-4',
+          'pb-6'
         );
 
-        navbarInner.classList.remove('py-4');
-        navbarInner.classList.add('py-2');
-
-      }
-
-      // SCROLL UP
-      else {
-
-        navbar.classList.remove(
-          '-translate-y-full'
+        mobileMenu.classList.add(
+          'max-h-0',
+          'opacity-0'
         );
 
-        navbarInner.classList.remove('py-2');
-        navbarInner.classList.add('py-4');
+        line1.classList.remove(
+          'rotate-45',
+          'translate-y-2'
+        );
 
+        line2.classList.remove('opacity-0');
+
+        line3.classList.remove(
+          '-rotate-45',
+          '-translate-y-2'
+        );
       }
 
-      lastScroll = currentScroll;
+    } else if (currentScroll < lastScroll - 10) {
 
-    });
-  </script>
+      navbar.classList.remove('-translate-y-full');
+
+      navbarInner.classList.remove('py-2');
+      navbarInner.classList.add('py-4');
+
+    }
+
+    lastScroll = currentScroll;
+
+  });
+</script>
 
   <!-- Locomotive Scroll -->
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>

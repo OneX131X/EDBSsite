@@ -23,7 +23,7 @@
                     <div class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Budget</p>
                         <h3 class="text-indigo-950 text-xl font-bold">
-                            ${{number_format($appointment->budget, 0, ',', '.')}}
+                            Rp {{number_format($appointment->budget, 0, ',', '.')}}
                         </h3>
                     </div>
                     <div class="hidden md:flex flex-col">
@@ -36,12 +36,19 @@
                         <a href="{{route('admin.appointments.show', $appointment)}}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Details
                         </a>
+                        <form action="{{route('admin.appointments.destroy', $appointment)}}" method="POST"> 
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
+                                Delete
+                            </button>
+                        </form>
                     </div>
                 </div>
                 @empty
                 <p>belum ada data terbaru</p>
                 @endforelse
-                {{ $appointments->links() }}
+                <!-- {{ $appointments->links() }} -->
             </div>
         </div>
     </div>
