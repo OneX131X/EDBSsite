@@ -68,7 +68,8 @@
                    lg:max-w-[56%]"
             data-aos="fade-up"
             data-aos-delay="100">
-            <div data-scroll data-scroll-speed="-0.05">
+            <!-- <div data-scroll data-scroll-speed="-0.05"> -->
+            <div>
               {{$hero->heading}}
             </div>
           </h1>
@@ -81,7 +82,8 @@
                    lg:max-w-[50%]"
             data-aos="fade-up"
             data-aos-delay="200">
-            <p data-scroll data-scroll-speed="-0.08">
+            <!-- <p data-scroll data-scroll-speed="-0.08"> -->
+            <p>
               {{$hero->subheading}}
             </p>
           </div>
@@ -91,8 +93,8 @@
         <div id="hero-buttons"
           class="flex flex-row justify-center lg:justify-start items-center
            gap-4 sm:gap-4
-           w-full sm:w-full"
-          data-scroll data-scroll-speed="-0.08">
+           w-full sm:w-full">
+          <!-- data-scroll data-scroll-speed="-0.08"> -->
 
           <div class="flex items-center gap-0">
             <div data-aos="zoom-in" data-aos-delay="300">
