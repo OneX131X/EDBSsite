@@ -37,7 +37,7 @@ class AppointmentController extends Controller
                     'name' => 'required|string|max:255',
                     'email' => 'required|email|max:255',
                     'phone' => 'required|string|max:20',
-                    'product_id' => 'required|exists:products,id',
+                    'project_id' => 'required|exists:projects,id',
                     'message' => 'nullable|string',
                 ]);
     

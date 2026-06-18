@@ -10,6 +10,7 @@ use App\Models\HeroSection;
 use App\Models\OurPrinciple;
 use App\Models\OurTeam;
 use App\Models\Product;
+use App\Models\Project;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -49,8 +50,8 @@ class FrontController extends Controller
     public function appointment()
     {
         $testimonials = Testimonial::take(4)->get();
-        $products = Product::take(3)->get();
-        return view('front.appointment', compact('testimonials', 'products'));
+        $projects = Project::take(3)->get();
+        return view('front.appointment', compact('testimonials', 'projects'));
     }
     public function appointment_store(StoreAppointmentRequest $request)
     {

@@ -128,12 +128,12 @@
             <div class="w-[18px] h-[18px] shrink-0">
               <img src="assets/icons/building-4-black.svg" alt="icon">
             </div>
-            <select name="product_id"
+            <select name="project_id"
               class="appearance-none outline-none bg-white w-full font-semibold placeholder:font-normal placeholder:text-cp-black"
               required>
               <option value="" hidden>Choose a project</option>
-              @foreach($products as $product)
-              <option value="{{$product->id}}">{{$product->name}}</option>
+              @foreach($projects as $project)
+              <option value="{{$project->id}}">{{$project->name}}</option>
               @endforeach
             </select>
           </div>
