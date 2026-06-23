@@ -15,11 +15,32 @@ foreach ($tmpDirs as $dir) {
     }
 }
 
-// 2. Force Laravel to use the writable /tmp directory for its core operations
-$_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
-$_ENV['CACHE_STORE'] = 'array';      // File cache will crash, use memory array
-$_ENV['SESSION_DRIVER'] = 'cookie';  // File sessions will crash, use secure cookies
-$_ENV['LOG_CHANNEL'] = 'stderr';     // Force logs into Vercel's console instead of files
+// 2. Force Laravel's env() helper to override core cache pathways
+// This explicitly bypasses any broken local/build cache files committed to Git.
+$overrides = [
+    'VIEW_COMPILED_PATH' => '/tmp/storage/framework/views',
+    'CACHE_STORE' => 'array',
+    'SESSION_DRIVER' => 'cookie',
+    'LOG_CHANNEL' => 'stderr',
+    'APP_SERVICES_CACHE' => '/tmp/storage/bootstrap/cache/services.php',
+    'APP_PACKAGES_CACHE' => '/tmp/storage/bootstrap/cache/packages.php',
+    'APP_CONFIG_CACHE' => '/tmp/storage/bootstrap/cache/config.php',
+    'APP_ROUTES_CACHE' => '/tmp/storage/bootstrap/cache/routes.php',
+    'APP_EVENTS_CACHE' => '/tmp/storage/bootstrap/cache/events.php',
+];
 
-// 3. Forward the Vercel serverless request to the Laravel application
-require __DIR__ . '/../public/index.php';
+foreach ($overrides as $key => $value) {
+    putenv("{$key}={$value}");
+    $_SERVER[$key] = $value;
+    $_ENV[$key] = $value;
+}
+
+// 3. Load Laravel's core application directly
+$app = require __DIR__ . '/../bootstrap/app.php';
+
+// 4. Force Laravel to physically use the writable /tmp directory for storage requests
+$app->useStoragePath('/tmp/storage');
+
+// 5. Handle the serverless request natively
+$response = $app->handleRequest(Illuminate\Http\Request::capture());
+$response->send();
