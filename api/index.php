@@ -1,6 +1,9 @@
 <?php
 
-// 1. Create the necessary writable temporary directories inside Vercel's /tmp folder
+// 1. Register the Composer autoloader (This is what was missing!)
+require __DIR__ . '/../vendor/autoload.php';
+
+// 2. Create the necessary writable temporary directories inside Vercel's /tmp folder
 $tmpDirs = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache/data',
@@ -15,8 +18,7 @@ foreach ($tmpDirs as $dir) {
     }
 }
 
-// 2. Force Laravel's env() helper to override core cache pathways
-// This explicitly bypasses any broken local/build cache files committed to Git.
+// 3. Force Laravel's env() helper to override core cache pathways
 $overrides = [
     'VIEW_COMPILED_PATH' => '/tmp/storage/framework/views',
     'CACHE_STORE' => 'array',
@@ -35,12 +37,12 @@ foreach ($overrides as $key => $value) {
     $_ENV[$key] = $value;
 }
 
-// 3. Load Laravel's core application directly
+// 4. Load Laravel's core application directly
 $app = require __DIR__ . '/../bootstrap/app.php';
 
-// 4. Force Laravel to physically use the writable /tmp directory for storage requests
+// 5. Force Laravel to physically use the writable /tmp directory for storage requests
 $app->useStoragePath('/tmp/storage');
 
-// 5. Handle the serverless request natively
+// 6. Handle the serverless request natively
 $response = $app->handleRequest(Illuminate\Http\Request::capture());
 $response->send();
