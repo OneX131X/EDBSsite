@@ -1,6 +1,5 @@
-/node_modules
-/tests
-/.git
-/storage/framework/cache
-/storage/framework/sessions
-/storage/framework/views
+.git
+storage/app
+*.zip
+node_modules
+tests
