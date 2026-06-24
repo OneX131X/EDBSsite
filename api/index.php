@@ -1,6 +1,6 @@
 <?php
 
-// 1. Register the Composer autoloader (This is what was missing!)
+// 1. Register the Composer autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
 // 2. Create the necessary writable temporary directories inside Vercel's /tmp folder
@@ -43,6 +43,5 @@ $app = require __DIR__ . '/../bootstrap/app.php';
 // 5. Force Laravel to physically use the writable /tmp directory for storage requests
 $app->useStoragePath('/tmp/storage');
 
-// 6. Handle the serverless request natively
-$response = $app->handleRequest(Illuminate\Http\Request::capture());
-$response->send();
+// 6. Handle the serverless request natively (Laravel 11+ automatically sends the response!)
+$app->handleRequest(Illuminate\Http\Request::capture());
