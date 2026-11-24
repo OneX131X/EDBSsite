@@ -9,7 +9,7 @@
                  <div class="flex shrink-0 h-[38px] sm:h-[43px] overflow-hidden" data-aos="fade-right" data-aos-delay="100">
                      <img src="assets/logo/edbsicon.svg" class="object-contain w-full h-full" alt="logo">
                  </div>
-     
+
                  <div class="flex flex-col leading-tight min-w-0">
                      <p id="CompanyName" class="font-extrabold text-base sm:text-xl truncate" data-aos="fade-left" data-aos-delay="200">
                          EDBS

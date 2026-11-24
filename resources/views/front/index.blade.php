@@ -181,7 +181,7 @@
     <!-- Logos Slider -->
     <div class="overflow-hidden relative w-full">
 
-      <div class="logo-track flex items-center gap-4 lg:gap-5 w-max">
+      {{-- <div class="logo-track flex items-center gap-4 lg:gap-5 w-max">
 
 
         <div data-aos="fade-up" data-aos-delay="100">
@@ -307,7 +307,7 @@
           </div>
         </div>
 
-      </div>
+      </div> --}}
     </div>
   </div>
 
@@ -696,20 +696,20 @@
 
     <!-- Awards Card Container -->
     <!-- <div data-aos="fade-up" data-aos-delay="50"> -->
-    <div class="awards-card-container 
-                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 
-                gap-2 lg:gap-[60px] 
-                mt-10 lg:mt-16 
+    <div class="awards-card-container
+                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                gap-2 lg:gap-[60px]
+                mt-10 lg:mt-16
                 items-start">
 
       <!-- <div data-aos="fade-up" data-aos-delay="50"> -->
-      <div class="card 
-                bg-white flex flex-col h-full 
-                p-6 lg:p-[30px] 
-                gap-5 lg:gap-[30px] 
-                rounded-[10px] 
+      <div class="card
+                bg-white flex flex-col h-full
+                p-6 lg:p-[30px]
+                gap-5 lg:gap-[30px]
+                rounded-[10px]
                 border border-[#FFFFFF]
-                hover:border-cp-dark-blue 
+                hover:border-cp-dark-blue
                 transition-all duration-500">
         <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
           <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
@@ -726,13 +726,13 @@
       <!-- </div> -->
 
       <!-- <div data-aos="fade-up" data-aos-delay="100"> -->
-      <div class="card 
-                bg-white flex flex-col h-full 
-                p-6 lg:p-[30px] 
-                gap-5 lg:gap-[30px] 
-                rounded-[10px] 
+      <div class="card
+                bg-white flex flex-col h-full
+                p-6 lg:p-[30px]
+                gap-5 lg:gap-[30px]
+                rounded-[10px]
                 border border-[#FFFFFF]
-                hover:border-cp-dark-blue 
+                hover:border-cp-dark-blue
                 transition-all duration-500">
         <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
           <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
@@ -749,13 +749,13 @@
       <!-- </div> -->
 
       <!-- <div data-aos="fade-up" data-aos-delay="150"> -->
-      <div class="card 
-                bg-white flex flex-col h-full 
-                p-6 lg:p-[30px] 
-                gap-5 lg:gap-[30px] 
-                rounded-[10px] 
+      <div class="card
+                bg-white flex flex-col h-full
+                p-6 lg:p-[30px]
+                gap-5 lg:gap-[30px]
+                rounded-[10px]
                 border border-[#FFFFFF]
-                hover:border-cp-dark-blue 
+                hover:border-cp-dark-blue
                 transition-all duration-500">
         <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
           <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
@@ -772,13 +772,13 @@
       <!-- </div> -->
 
       <!-- <div data-aos="fade-up" data-aos-delay="200"> -->
-      <div class="card 
-                bg-white flex flex-col h-full 
-                p-6 lg:p-[30px] 
-                gap-5 lg:gap-[30px] 
-                rounded-[10px] 
+      <div class="card
+                bg-white flex flex-col h-full
+                p-6 lg:p-[30px]
+                gap-5 lg:gap-[30px]
+                rounded-[10px]
                 border border-[#FFFFFF]
-                hover:border-cp-dark-blue 
+                hover:border-cp-dark-blue
                 transition-all duration-500">
         <div class="w-[55px] h-[55px] flex shrink-0 mx-auto items-center justify-center rounded-2xl bg-cp-pale-blue/30">
           <img src="{{asset('assets/icons/cup-blue.svg')}}" alt="icon">
